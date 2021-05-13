@@ -1,0 +1,104 @@
+[leader] Defining quadrants for simulation 1 : 30x30
+[leader] Miner miner1 is in the depot quadrant.
+[miner2] I've got my quadrant, changing search gold strategy.
+[miner3] I've got my quadrant, changing search gold strategy.
+[miner4] I've got my quadrant, changing search gold strategy.
+[miner2] All golds=[], evaluation=[]
+[miner3] All golds=[], evaluation=[]
+[miner2] New goal is find gold: quadrant
+[miner4] New goal is find gold: quadrant
+[miner3] New goal is find gold: quadrant
+[MiningEnvironment] Cycle 1 finished in 1002 ms, mean is 1002.
+[MiningEnvironment] Cycle 2 finished in 1001 ms, mean is 1001.
+[MiningEnvironment] Cycle 3 finished in 1001 ms, mean is 1001.
+[MiningEnvironment] Cycle 4 finished in 1002 ms, mean is 1001.
+[MiningEnvironment] Cycle 5 finished in 1001 ms, mean is 1001.
+[miner1] *** Start it all again!
+[miner1] All golds=[], evaluation=[]
+[miner1] New goal is find gold: near_unvisited
+[MiningEnvironment] Cycle 6 finished in 222 ms, mean is 871.
+[MiningEnvironment] Cycle 7 finished in 109 ms, mean is 762.
+[MiningEnvironment] Cycle 8 finished in 105 ms, mean is 680.
+[miner3] in Q1 to 14x15
+[dummy2] No route from 8,2 to 8,3!
+---------------------------------------------
+|       1                      |
+|                              |
+|        2                     |
+|        3                     |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|      O                       |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|---------------------------------------------
+
+[MiningEnvironment] Cycle 9 finished in 182 ms, mean is 625.
+[MiningEnvironment] Cycle 10 finished in 120 ms, mean is 574.
+[MiningEnvironment] Cycle 11 finished in 108 ms, mean is 532.
+[MiningEnvironment] Cycle 12 finished in 139 ms, mean is 499.
+[MiningEnvironment] Cycle 13 finished in 104 ms, mean is 468.
+[MiningEnvironment] Cycle 14 finished in 108 ms, mean is 443.
+[MiningEnvironment] Cycle 15 finished in 118 ms, mean is 421.
+[miner1] No route from 4,2 to 5,2!
+---------------------------------------------
+|                              |
+|                              |
+|    1E      2                 |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|      O                       |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|      3                       |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|                              |
+|---------------------------------------------
+
+[MiningEnvironment] Cycle 16 finished in 117 ms, mean is 402.
+[MiningEnvironment] agent miner1 skips!
+[MiningEnvironment] Cycle 17 finished in 104 ms, mean is 384.
+[MiningEnvironment] Cycle 18 finished in 108 ms, mean is 369.
+[MiningEnvironment] Cycle 19 finished in 107 ms, mean is 355.
+[miner2] in Q1 to 29x0
+[MiningEnvironment] Cycle 20 finished in 44 ms, mean is 340.
