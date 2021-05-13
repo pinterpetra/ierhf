@@ -221,7 +221,7 @@ public class WorldView extends GridWorldView {
     public void drawAgent(Graphics g, int x, int y, Color c, int id) {
         int golds = ((WorldModel)model).getGoldsWithAg(id);
         int nbAgByTeam = ((WorldModel)model).getAgsByTeam();
-        if (id < nbAgByTeam) {
+        if (id == 0 || id == 1) {
             // red team
             int gw = (WorldModel.AG_CAPACITY - golds) + 1;
             g.setColor(Color.red);
@@ -230,7 +230,18 @@ public class WorldView extends GridWorldView {
                 g.setColor(Color.black);
                 drawString(g, x, y, defaultFont, String.valueOf(id+1));
             }
-        } else {
+        }
+        else if (id == 2 || id == 3) {
+            // green team
+            int gw = (WorldModel.AG_CAPACITY - golds) + 1;
+            g.setColor(Color.green);
+            g.fillOval(x * cellSizeW + gw, y * cellSizeH + gw, cellSizeW - gw*2, cellSizeH - gw*2);
+            if (id >= 0) {
+                g.setColor(Color.black);
+                drawString(g, x, y, defaultFont, String.valueOf(id+1));
+            }
+        }
+        else {
             // blue team
             int gw = (WorldModel.AG_CAPACITY - golds) + 1;
             g.setColor(Color.blue);
@@ -255,34 +266,4 @@ public class WorldView extends GridWorldView {
         g.drawLine(x * cellSizeW + 2, y * cellSizeH + 2, (x + 1) * cellSizeW - 2, (y + 1) * cellSizeH - 2);
         g.drawLine(x * cellSizeW + 2, (y + 1) * cellSizeH - 2, (x + 1) * cellSizeW - 2, y * cellSizeH + 2);
     }
-
-    /*public void drawTarget(Graphics g, int x, int y) {
-        g.setColor(Color.darkGray);
-        g.drawRect(x * cellSizeW + 2, y * cellSizeH + 2, cellSizeW - 4, cellSizeH - 4);
-        g.setColor(Color.white);
-        g.drawRect(x * cellSizeW + 3, y * cellSizeH + 3, cellSizeW - 6, cellSizeH - 6);
-        g.setColor(Color.darkGray);
-        g.drawRect(x * cellSizeW + 4, y * cellSizeH + 4, cellSizeW - 8, cellSizeH - 8);
-    }*/
-
-    /*public void drawGold(Graphics g, int x, int y) {
-        g.setColor(Color.yellow);
-        g.drawRect(x * cellSizeW + 2, y * cellSizeH + 2, cellSizeW - 4, cellSizeH - 4);
-        int[] vx = new int[4];
-        int[] vy = new int[4];
-        vx[0] = x * cellSizeW + (cellSizeW / 2);
-        vy[0] = y * cellSizeH;
-        vx[1] = (x + 1) * cellSizeW;
-        vy[1] = y * cellSizeH + (cellSizeH / 2);
-        vx[2] = x * cellSizeW + (cellSizeW / 2);
-        vy[2] = (y + 1) * cellSizeH;
-        vx[3] = x * cellSizeW;
-        vy[3] = y * cellSizeH + (cellSizeH / 2);
-        g.fillPolygon(vx, vy, 4);
-    }*/
-
-    /*public void drawEnemy(Graphics g, int x, int y) {
-        g.setColor(Color.red);
-        g.fillOval(x * cellSizeW + 7, y * cellSizeH + 7, cellSizeW - 8, cellSizeH - 8);
-    }*/
 }

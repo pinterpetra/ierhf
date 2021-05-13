@@ -56,9 +56,10 @@ public class MiningEnvironment extends TimeSteppedEnvironment {
         hasGUI = args[2].equals("yes");
         redTeamName  = args[3];
         blueTeamName = args[4];
+        greenTeamName = args[5];
 
-        if (args.length > 5)
-            windowSize = Integer.parseInt(args[5]);
+        if (args.length > 6)
+            windowSize = Integer.parseInt(args[6]);
         initWorld(Integer.parseInt(args[0]));
     }
 
@@ -123,6 +124,9 @@ public class MiningEnvironment extends TimeSteppedEnvironment {
         }
         if (agName.startsWith(blueTeamName)) {
             return (Integer.parseInt(agName.substring(blueTeamName.length()))) + (model.agsByTeam - 1);
+        }
+        if (agName.startsWith(greenTeamName)) {
+            return (Integer.parseInt(agName.substring(greenTeamName.length()))) + (model.agsByTeam - 1);
         }
         logger.warning("There is no ID for agent named "+agName);
         return -1;
