@@ -8,7 +8,7 @@
  * By Jomi & Rafael
  */
 
-MAS miners {
+MAS delivery {
     infrastructure: Centralised
 
     environment: env.Environment(1, 100, yes, "dummy", "miner", "greens", 1000)

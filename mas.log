@@ -73,334 +73,333 @@
 [miner2] Doing (add) brf for kqml::clear_source_self([],[])[source(self)]
 [miner2] brf added kqml::clear_source_self([],[])[source(self)]
 [BaseCentralisedMAS] Creating controller jason.control.ExecutionControlGUI
-[leader1] Start sense
+[miner2] Start sense
+[dummy1] Start sense
 [greens2] Start sense
 [miner1] Start sense
-[leader1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
 [leader2] Start sense
-[dummy1] Start sense
-[leader2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
-[miner2] Start sense
+[miner2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,13,1), carrying_gold(0), container_has_space, cell(0,12,empty), cell(0,13,empty), cell(0,14,empty), cell(1,12,empty), cell(1,13,empty), cell(1,14,ally), cell(2,12,empty), cell(2,13,empty), cell(2,14,empty)]
 [dummy2] Start sense
+[leader1] Start sense
 [greens1] Start sense
-[dummy1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,1,1), carrying_gold(0), container_has_space, cell(0,0,empty), cell(0,1,empty), cell(0,2,empty), cell(1,0,empty), cell(1,1,empty), cell(1,2,ally), cell(2,0,empty), cell(2,1,empty), cell(2,2,empty)]
-[greens1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
 [miner1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,8,1), carrying_gold(0), container_has_space, cell(0,7,empty), cell(0,8,empty), cell(0,9,empty), cell(1,7,enemy), cell(1,8,empty), cell(1,9,empty), cell(2,7,empty), cell(2,8,empty), cell(2,9,empty)]
+[leader2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
+[dummy1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,1,1), carrying_gold(0), container_has_space, cell(0,0,empty), cell(0,1,empty), cell(0,2,empty), cell(1,0,empty), cell(1,1,empty), cell(2,0,empty), cell(2,1,empty)]
 [greens2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
-[dummy2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,2,1), carrying_gold(0), container_has_space, cell(0,1,empty), cell(0,3,empty), cell(1,1,ally), cell(1,2,empty), cell(1,3,empty), cell(2,1,empty), cell(2,2,empty), cell(2,3,empty)]
-[miner2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,13,1), carrying_gold(0), container_has_space, cell(0,12,empty), cell(0,13,empty), cell(0,14,empty), cell(1,13,empty), cell(1,14,ally), cell(2,12,empty), cell(2,13,empty), cell(2,14,empty)]
+[greens1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
+[dummy2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,2,1), carrying_gold(0), container_has_space, cell(0,1,empty), cell(0,2,empty), cell(0,3,empty), cell(1,1,ally), cell(1,3,empty), cell(2,1,empty), cell(2,2,empty), cell(2,3,empty)]
+[leader1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000)]
 [leader2] Added event +gsize(1,30,30)[source(percept)], events = [+gsize(1,30,30)[source(percept)]]
-[leader2] Selected event +gsize(1,30,30)[source(percept)]
 [leader1] Added event +gsize(1,30,30)[source(percept)], events = [+gsize(1,30,30)[source(percept)]]
-[dummy1] Doing (add) brf for gsize(1,30,30)[source(self)]
-[dummy1] brf added gsize(1,30,30)[source(self)]
-[miner2] Doing (add) brf for gsize(1,30,30)[source(self)]
 [dummy2] Doing (add) brf for gsize(1,30,30)[source(self)]
+[miner2] Doing (add) brf for gsize(1,30,30)[source(self)]
 [miner1] Doing (add) brf for gsize(1,30,30)[source(self)]
-[miner2] brf added gsize(1,30,30)[source(self)]
-[leader2] option for +gsize(1,30,30)[source(percept)] is plan quads[atomic,source(self),url("file:asl/leader.asl")] +gsize(S,W,H) : null -- with unification {S=1, W=30, H=30}
 [leader1] Selected event +gsize(1,30,30)[source(percept)]
-[miner2] Doing (add) brf for depot(1,20,10)[source(self)]
-[dummy1] Doing (add) brf for depot(1,20,10)[source(self)]
+[dummy1] Doing (add) brf for gsize(1,30,30)[source(self)]
+[leader2] Selected event +gsize(1,30,30)[source(percept)]
 [miner1] brf added gsize(1,30,30)[source(self)]
 [dummy2] brf added gsize(1,30,30)[source(self)]
-[dummy1] brf added depot(1,20,10)[source(self)]
-[miner2] brf added depot(1,20,10)[source(self)]
 [leader1] option for +gsize(1,30,30)[source(percept)] is plan quads[atomic,source(self),url("file:asl/leader.asl")] +gsize(S,W,H) : null -- with unification {S=1, W=30, H=30}
-[leader2]      quads[atomic,source(self),url("file:asl/leader.asl")] is applicable with unification {S=1, W=30, H=30}
-[leader1]      quads[atomic,source(self),url("file:asl/leader.asl")] is applicable with unification {S=1, W=30, H=30}
-[miner2] Doing (add) brf for steps(1,100000)[source(self)]
-[dummy1] Doing (add) brf for steps(1,100000)[source(self)]
-[miner2] brf added steps(1,100000)[source(self)]
-[dummy1] brf added steps(1,100000)[source(self)]
-[dummy2] Doing (add) brf for depot(1,20,10)[source(self)]
+[miner2] brf added gsize(1,30,30)[source(self)]
 [miner1] Doing (add) brf for depot(1,20,10)[source(self)]
+[dummy2] Doing (add) brf for depot(1,20,10)[source(self)]
+[leader2] option for +gsize(1,30,30)[source(percept)] is plan quads[atomic,source(self),url("file:asl/leader.asl")] +gsize(S,W,H) : null -- with unification {S=1, W=30, H=30}
+[dummy1] brf added gsize(1,30,30)[source(self)]
+[leader2]      quads[atomic,source(self),url("file:asl/leader.asl")] is applicable with unification {S=1, W=30, H=30}
 [dummy2] brf added depot(1,20,10)[source(self)]
 [miner1] brf added depot(1,20,10)[source(self)]
+[miner2] Doing (add) brf for depot(1,20,10)[source(self)]
+[miner2] brf added depot(1,20,10)[source(self)]
+[leader1]      quads[atomic,source(self),url("file:asl/leader.asl")] is applicable with unification {S=1, W=30, H=30}
 [leader2] Selected option (@quads[atomic,source(self),url("file:asl/leader.asl")] +gsize(S,W,H) <- .print("Defining quadrants for simulation ",S," : ",W,"x",H); (CellH = (H div 2)); +quad(S,1,0,0,((W div 2)-1),(CellH-1)); +quad(S,2,(W div 2),0,(W-1),(CellH-1)); +quad(S,3,0,CellH,((W div 2)-1),((CellH*2)-1)); +quad(S,4,(W div 2),CellH,(W-1),((CellH*2)-1)); !inform_quad(S,miner1,1); !inform_quad(S,miner2,2); !inform_quad(S,miner3,3); !inform_quad(S,miner4,4).,{S=1, W=30, H=30}) for event +gsize(1,30,30)[source(percept)]
-[leader1] Selected option (@quads[atomic,source(self),url("file:asl/leader.asl")] +gsize(S,W,H) <- .print("Defining quadrants for simulation ",S," : ",W,"x",H); (CellH = (H div 2)); +quad(S,1,0,0,((W div 2)-1),(CellH-1)); +quad(S,2,(W div 2),0,(W-1),(CellH-1)); +quad(S,3,0,CellH,((W div 2)-1),((CellH*2)-1)); +quad(S,4,(W div 2),CellH,(W-1),((CellH*2)-1)); !inform_quad(S,miner1,1); !inform_quad(S,miner2,2); !inform_quad(S,miner3,3); !inform_quad(S,miner4,4).,{S=1, W=30, H=30}) for event +gsize(1,30,30)[source(percept)]
 [miner1] Doing (add) brf for steps(1,100000)[source(self)]
 [dummy2] Doing (add) brf for steps(1,100000)[source(self)]
-[leader2] Defining quadrants for simulation 1 : 30x30
-[leader1] Defining quadrants for simulation 1 : 30x30
-[dummy2] brf added steps(1,100000)[source(self)]
+[dummy1] Doing (add) brf for depot(1,20,10)[source(self)]
 [miner1] brf added steps(1,100000)[source(self)]
+[leader1] Selected option (@quads[atomic,source(self),url("file:asl/leader.asl")] +gsize(S,W,H) <- .print("Defining quadrants for simulation ",S," : ",W,"x",H); (CellH = (H div 2)); +quad(S,1,0,0,((W div 2)-1),(CellH-1)); +quad(S,2,(W div 2),0,(W-1),(CellH-1)); +quad(S,3,0,CellH,((W div 2)-1),((CellH*2)-1)); +quad(S,4,(W div 2),CellH,(W-1),((CellH*2)-1)); !inform_quad(S,miner1,1); !inform_quad(S,miner2,2); !inform_quad(S,miner3,3); !inform_quad(S,miner4,4).,{S=1, W=30, H=30}) for event +gsize(1,30,30)[source(percept)]
+[miner2] Doing (add) brf for steps(1,100000)[source(self)]
+[dummy1] brf added depot(1,20,10)[source(self)]
+[dummy2] brf added steps(1,100000)[source(self)]
+[miner2] brf added steps(1,100000)[source(self)]
+[leader1] Defining quadrants for simulation 1 : 30x30
+[leader2] Defining quadrants for simulation 1 : 30x30
 [leader1] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
+[dummy1] Doing (add) brf for steps(1,100000)[source(self)]
 [leader2] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
-[miner2] Added event +cell(0,13,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)]]
-[miner2] Added event +cell(2,13,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)]]
-[miner2] Added event +cell(1,13,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)]]
-[miner2] Added event +cell(1,14,ally)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)]]
+[dummy1] brf added steps(1,100000)[source(self)]
 [miner1] Added event +pos(1,8,1)[source(percept)], events = [+pos(1,8,1)[source(percept)]]
 [miner1] Added event +cell(1,7,enemy)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)]]
-[miner2] Added event +pos(1,13,1)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)]]
 [miner1] Added event +cell(0,7,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)]]
-[dummy2] Added event +pos(1,2,1)[source(percept)], events = [+pos(1,2,1)[source(percept)]]
-[miner1] Added event +cell(0,9,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)]]
-[miner2] Added event +cell(0,12,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)]]
-[dummy2] received message: <mid2,dummy1,tell,dummy2,my_status(1,1,0)>
-[miner1] Added event +cell(2,7,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)]]
-[miner2] Added event +cell(0,14,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)]]
-[miner1] Added event +cell(2,9,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)]]
-[dummy2] Selected event +pos(1,2,1)[source(percept)]
-[miner2] Added event +cell(2,12,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)], +cell(2,12,empty)[source(percept)]]
-[miner2] Added event +cell(2,14,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)], +cell(2,12,empty)[source(percept)], +cell(2,14,empty)[source(percept)]]
-[miner2] received message: <mid4,miner1,tell,miner2,my_status(1,8,0)>
 [dummy1] Added event +pos(1,1,1)[source(percept)], events = [+pos(1,1,1)[source(percept)]]
-[dummy1] received message: <mid3,dummy2,tell,dummy1,my_status(1,2,0)>
+[dummy1] received message: <mid2,dummy2,tell,dummy1,my_status(1,2,0)>
+[miner1] Added event +cell(0,9,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)]]
 [dummy1] Selected event +pos(1,1,1)[source(percept)]
+[miner1] Added event +cell(2,7,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)]]
 [dummy1] option for +pos(1,1,1)[source(percept)] is plan p__1[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_5) : (cell(X,Y,gold) & (carrying_gold(N) & (N < 3))) -- with unification {_5=1, X=1, Y=1}
-[dummy1]      | NO more options for cell(X,Y,gold)
+[miner2] Added event +cell(0,13,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)]]
+[miner1] Added event +cell(2,9,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)]]
+[miner2] Added event +cell(2,13,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)]]
 [miner1] Added event +cell(1,9,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)], +cell(1,9,empty)[source(percept)]]
+[dummy2] Added event +pos(1,2,1)[source(percept)], events = [+pos(1,2,1)[source(percept)]]
+[dummy2] received message: <mid4,dummy1,tell,dummy2,my_status(1,1,0)>
+[miner2] Added event +cell(1,13,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)]]
+[dummy2] Selected event +pos(1,2,1)[source(percept)]
 [dummy2] option for +pos(1,2,1)[source(percept)] is plan p__9[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_39) : (cell(X,Y,gold) & (carrying_gold(N) & (N < 3))) -- with unification {_39=1, X=1, Y=2}
-[dummy1]      p__1[source(self),url("file:asl/dummy.asl")] is not applicable
-[miner2] Selected event +cell(0,13,empty)[source(percept)]
 [miner1] Added event +cell(0,8,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)], +cell(1,9,empty)[source(percept)], +cell(0,8,empty)[source(percept)]]
-[miner2] option for +cell(0,13,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=13}
-[miner2]      | no candidate belief for gold(X,Y) with {X=0, Y=13}
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
 [dummy2]      | NO more options for cell(X,Y,gold)
-[miner2] Selected event +cell(2,13,empty)[source(percept)]
-[miner1] Added event +cell(2,8,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)], +cell(1,9,empty)[source(percept)], +cell(0,8,empty)[source(percept)], +cell(2,8,empty)[source(percept)]]
-[miner2] option for +cell(2,13,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=13}
-[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__2[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_6) : (cell(GX,GY,gold) & (carrying_gold(N) & (N < 3))) -- with unification {_6=1, X=1, Y=1}
-[miner2]      | no candidate belief for gold(X,Y) with {X=2, Y=13}
 [dummy2]      p__9[source(self),url("file:asl/dummy.asl")] is not applicable
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
-[miner1] Added event +cell(1,8,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)], +cell(1,9,empty)[source(percept)], +cell(0,8,empty)[source(percept)], +cell(2,8,empty)[source(percept)], +cell(1,8,empty)[source(percept)]]
-[miner2] Selected event +cell(1,13,empty)[source(percept)]
-[dummy1]      | NO more options for cell(GX,GY,gold)
-[miner1] received message: <mid1,miner2,tell,miner1,my_status(1,13,0)>
 [dummy2] option for +pos(1,2,1)[source(percept)] is plan p__10[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_40) : (cell(GX,GY,gold) & (carrying_gold(N) & (N < 3))) -- with unification {X=1, Y=2, _40=1}
-[miner2] option for +cell(1,13,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=1, Y=13}
-[miner2]      | no candidate belief for gold(X,Y) with {X=1, Y=13}
-[dummy1]      p__2[source(self),url("file:asl/dummy.asl")] is not applicable
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
-[miner1] Selected event +pos(1,8,1)[source(percept)]
 [dummy2]      | NO more options for cell(GX,GY,gold)
-[miner2] Selected event +cell(1,14,ally)[source(percept)]
-[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__3[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_7) : (go_depot & depot(_8,X,Y)) -- with unification {X=1, _7=1, Y=1}
-[miner2] Selected event +pos(1,13,1)[source(percept)]
+[miner2] Added event +cell(1,14,ally)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)]]
+[dummy1]      | NO more options for cell(X,Y,gold)
+[dummy1]      p__1[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2] Added event +pos(1,13,1)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)]]
 [dummy2]      p__10[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2] Added event +cell(0,12,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)]]
+[miner2] Added event +cell(0,14,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)]]
+[miner2] Added event +cell(2,12,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)], +cell(2,12,empty)[source(percept)]]
+[miner1] Added event +cell(2,8,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)], +cell(1,9,empty)[source(percept)], +cell(0,8,empty)[source(percept)], +cell(2,8,empty)[source(percept)]]
+[miner1] Added event +cell(1,8,empty)[source(percept)], events = [+pos(1,8,1)[source(percept)], +cell(1,7,enemy)[source(percept)], +cell(0,7,empty)[source(percept)], +cell(0,9,empty)[source(percept)], +cell(2,7,empty)[source(percept)], +cell(2,9,empty)[source(percept)], +cell(1,9,empty)[source(percept)], +cell(0,8,empty)[source(percept)], +cell(2,8,empty)[source(percept)], +cell(1,8,empty)[source(percept)]]
+[miner1] received message: <mid3,miner2,tell,miner1,my_status(1,13,0)>
+[miner1] Selected event +pos(1,8,1)[source(percept)]
 [miner1] Selected event +cell(1,7,enemy)[source(percept)]
-[dummy1]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
-[miner2] Selected event +cell(0,12,empty)[source(percept)]
-[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__11[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_41) : (go_depot & depot(_42,X,Y)) -- with unification {X=1, Y=2, _41=1}
 [miner1] Selected event +cell(0,7,empty)[source(percept)]
-[dummy1]      | NO more options for carrying_gold(3)
-[miner2] option for +cell(0,12,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=12}
-[dummy2]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
-[miner2]      | no candidate belief for gold(X,Y) with {X=0, Y=12}
 [miner1] option for +cell(0,7,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=7}
-[dummy1]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_1,_2,Step) & (steps(_3,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
 [miner1]      | no candidate belief for gold(X,Y) with {X=0, Y=7}
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy2]      | NO more options for carrying_gold(3)
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy1]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
-[dummy2]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_35,_36,Step) & (steps(_37,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
 [miner1] Selected event +cell(0,9,empty)[source(percept)]
-[miner2] Selected event +cell(0,14,empty)[source(percept)]
-[dummy2]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
 [miner1] option for +cell(0,9,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=9}
-[dummy2]      | (N > 0) failed  -- {N=0}
 [miner1]      | no candidate belief for gold(X,Y) with {X=0, Y=9}
-[dummy2]      | NO more options for carrying_gold(N)
-[dummy1]      | (N > 0) failed  -- {N=0}
-[miner2] option for +cell(0,14,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=14}
-[dummy1]      | NO more options for carrying_gold(N)
-[dummy2]      | NO more options for go_depot
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy2]      p__11[source(self),url("file:asl/dummy.asl")] is not applicable
-[dummy1]      | NO more options for go_depot
 [miner1] Selected event +cell(2,7,empty)[source(percept)]
-[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__12[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_43) : (go_depot & depot(_44,DX,DY)) -- with unification {X=1, Y=2, _43=1}
-[miner2]      | no candidate belief for gold(X,Y) with {X=0, Y=14}
-[dummy2]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
-[dummy1]      p__3[source(self),url("file:asl/dummy.asl")] is not applicable
-[dummy2]      | NO more options for carrying_gold(3)
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
 [miner1] option for +cell(2,7,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=7}
-[dummy2]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_35,_36,Step) & (steps(_37,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
-[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__4[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_9) : (go_depot & depot(_10,DX,DY)) -- with unification {X=1, Y=1, _9=1}
-[dummy2]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
-[dummy1]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
 [miner1]      | no candidate belief for gold(X,Y) with {X=2, Y=7}
-[miner2] Selected event +cell(2,12,empty)[source(percept)]
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy1]      | NO more options for carrying_gold(3)
-[dummy2]      | (N > 0) failed  -- {N=0}
-[miner2] option for +cell(2,12,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=12}
 [miner1] Selected event +cell(2,9,empty)[source(percept)]
-[miner2]      | no candidate belief for gold(X,Y) with {X=2, Y=12}
-[dummy2]      | NO more options for carrying_gold(N)
-[dummy1]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_1,_2,Step) & (steps(_3,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
-[dummy2]      | NO more options for go_depot
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
 [miner1] option for +cell(2,9,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=9}
-[dummy2]      p__12[source(self),url("file:asl/dummy.asl")] is not applicable
-[dummy1]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
 [miner1]      | no candidate belief for gold(X,Y) with {X=2, Y=9}
-[miner2] Selected event +cell(2,14,empty)[source(percept)]
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__13[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_45) : (back_pos(X,Y) | (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,skip))) -- with unification {_45=1, X=1, Y=2}
-[dummy1]      | (N > 0) failed  -- {N=0}
-[miner2] option for +cell(2,14,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=14}
-[miner2]      | no candidate belief for gold(X,Y) with {X=2, Y=14}
 [miner1] Selected event +cell(1,9,empty)[source(percept)]
-[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy2]      | no candidate belief for back_pos(X,Y) with {_45=1, X=1, Y=2}
-[dummy1]      | NO more options for carrying_gold(N)
 [miner1] option for +cell(1,9,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=1, Y=9}
-[dummy1]      | NO more options for go_depot
 [miner1]      | no candidate belief for gold(X,Y) with {X=1, Y=9}
-[dummy1]      p__4[source(self),url("file:asl/dummy.asl")] is not applicable
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy2]      | no candidate belief for back_pos(BX,BY) with {X=1, _45=1, Y=2}
-[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__5[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_11) : (back_pos(X,Y) | (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,skip))) -- with unification {X=1, Y=1, _11=1}
-[dummy2]      p__13[source(self),url("file:asl/dummy.asl")] is not applicable
 [miner1] Selected event +cell(0,8,empty)[source(percept)]
-[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__14[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_46) : (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,D)) -- with unification {_46=1, X=1, Y=2}
-[dummy1]      | no candidate belief for back_pos(X,Y) with {X=1, Y=1, _11=1}
 [miner1] option for +cell(0,8,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=8}
-[dummy2]      | no candidate belief for back_pos(BX,BY) with {_46=1, X=1, Y=2}
 [miner1]      | no candidate belief for gold(X,Y) with {X=0, Y=8}
-[dummy2]      p__14[source(self),url("file:asl/dummy.asl")] is not applicable
-[dummy1]      | no candidate belief for back_pos(BX,BY) with {X=1, Y=1, _11=1}
-[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__15[source(self),url("file:asl/dummy.asl")] +pos(_47,_48,_49) : null -- with unification {_48=2, _47=1, _49=1}
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
-[dummy2]      p__15[source(self),url("file:asl/dummy.asl")] is applicable with unification {_48=2, _47=1, _49=1}
-[dummy2] Selected option (@p__15[source(self),url("file:asl/dummy.asl")] +pos(_47,_48,_49) <- !define_new_pos.,{_48=2, _47=1, _49=1}) for event +pos(1,2,1)[source(percept)]
-[dummy1]      p__5[source(self),url("file:asl/dummy.asl")] is not applicable
 [miner1] Selected event +cell(2,8,empty)[source(percept)]
-[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__6[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_12) : (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,D)) -- with unification {_12=1, X=1, Y=1}
-[dummy1]      | no candidate belief for back_pos(BX,BY) with {_12=1, X=1, Y=1}
-[dummy2] Selected intention intention 3: 
-    +pos(1,2,1)[source(percept)] <- ... !define_new_pos / {_48=2, _47=1, _49=1}
-
 [miner1] option for +cell(2,8,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=8}
-[dummy2] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
-[dummy1]      p__6[source(self),url("file:asl/dummy.asl")] is not applicable
 [miner1]      | no candidate belief for gold(X,Y) with {X=2, Y=8}
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
 [miner1] Selected event +cell(1,8,empty)[source(percept)]
-[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__7[source(self),url("file:asl/dummy.asl")] +pos(_13,_14,_15) : null -- with unification {_13=1, _15=1, _14=1}
 [miner1] option for +cell(1,8,empty)[source(percept)] is plan p__110[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=1, Y=8}
 [miner1]      | no candidate belief for gold(X,Y) with {X=1, Y=8}
 [miner1]      p__110[source(self),url("file:asl/miner.asl")] is not applicable
+[miner2] Added event +cell(2,14,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)], +cell(2,12,empty)[source(percept)], +cell(2,14,empty)[source(percept)]]
+[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__11[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_41) : (go_depot & depot(_42,X,Y)) -- with unification {X=1, Y=2, _41=1}
+[miner2] Added event +cell(1,12,empty)[source(percept)], events = [+cell(0,13,empty)[source(percept)], +cell(2,13,empty)[source(percept)], +cell(1,13,empty)[source(percept)], +cell(1,14,ally)[source(percept)], +pos(1,13,1)[source(percept)], +cell(0,12,empty)[source(percept)], +cell(0,14,empty)[source(percept)], +cell(2,12,empty)[source(percept)], +cell(2,14,empty)[source(percept)], +cell(1,12,empty)[source(percept)]]
+[miner2] received message: <mid1,miner1,tell,miner2,my_status(1,8,0)>
+[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__2[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_6) : (cell(GX,GY,gold) & (carrying_gold(N) & (N < 3))) -- with unification {_6=1, X=1, Y=1}
+[miner2] Selected event +cell(0,13,empty)[source(percept)]
+[miner2] option for +cell(0,13,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=13}
+[miner2]      | no candidate belief for gold(X,Y) with {X=0, Y=13}
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy2]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
+[miner2] Selected event +cell(2,13,empty)[source(percept)]
+[miner2] option for +cell(2,13,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=13}
+[miner2]      | no candidate belief for gold(X,Y) with {X=2, Y=13}
+[dummy1]      | NO more options for cell(GX,GY,gold)
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy2]      | NO more options for carrying_gold(3)
+[miner2] Selected event +cell(1,13,empty)[source(percept)]
+[dummy2]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_35,_36,Step) & (steps(_37,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
+[miner2] option for +cell(1,13,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=1, Y=13}
+[dummy1]      p__2[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2]      | no candidate belief for gold(X,Y) with {X=1, Y=13}
+[dummy2]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[miner2] Selected event +cell(1,14,ally)[source(percept)]
+[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__3[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_7) : (go_depot & depot(_8,X,Y)) -- with unification {X=1, _7=1, Y=1}
+[miner2] Selected event +pos(1,13,1)[source(percept)]
+[dummy2]      | (N > 0) failed  -- {N=0}
+[dummy2]      | NO more options for carrying_gold(N)
+[dummy1]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
+[dummy2]      | NO more options for go_depot
+[miner2] Selected event +cell(0,12,empty)[source(percept)]
+[dummy1]      | NO more options for carrying_gold(3)
+[dummy2]      p__11[source(self),url("file:asl/dummy.asl")] is not applicable
+[dummy1]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_1,_2,Step) & (steps(_3,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
+[miner2] option for +cell(0,12,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=12}
+[dummy1]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
+[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__12[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_43) : (go_depot & depot(_44,DX,DY)) -- with unification {X=1, Y=2, _43=1}
+[dummy1]      | (N > 0) failed  -- {N=0}
+[miner2]      | no candidate belief for gold(X,Y) with {X=0, Y=12}
+[dummy1]      | NO more options for carrying_gold(N)
+[dummy2]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
+[dummy1]      | NO more options for go_depot
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy1]      p__3[source(self),url("file:asl/dummy.asl")] is not applicable
+[dummy2]      | NO more options for carrying_gold(3)
+[miner2] Selected event +cell(0,14,empty)[source(percept)]
+[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__4[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_9) : (go_depot & depot(_10,DX,DY)) -- with unification {X=1, Y=1, _9=1}
+[dummy2]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_35,_36,Step) & (steps(_37,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
+[dummy2]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
+[dummy2]      | (N > 0) failed  -- {N=0}
+[dummy2]      | NO more options for carrying_gold(N)
+[dummy2]      | NO more options for go_depot
+[miner2] option for +cell(0,14,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=0, Y=14}
+[dummy1]      | for go_depot, rule go_depot[source(self)] :- carrying_gold(3) is an option -- {}
+[dummy2]      p__12[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2]      | no candidate belief for gold(X,Y) with {X=0, Y=14}
+[dummy1]      | NO more options for carrying_gold(3)
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__13[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_45) : (back_pos(X,Y) | (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,skip))) -- with unification {_45=1, X=1, Y=2}
+[dummy1]      | for go_depot, rule go_depot[source(self)] :- (carrying_gold(N) & ((N > 0) & (pos(_1,_2,Step) & (steps(_3,NSteps) & ((Step+200) > NSteps))))) is an option -- {}
+[miner2] Selected event +cell(2,12,empty)[source(percept)]
+[dummy1]      | for carrying_gold(N), belief carrying_gold(0)[source(percept)] is an option -- {N=0}
+[dummy1]      | (N > 0) failed  -- {N=0}
+[miner2] option for +cell(2,12,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=12}
+[dummy1]      | NO more options for carrying_gold(N)
+[miner2]      | no candidate belief for gold(X,Y) with {X=2, Y=12}
+[dummy2]      | no candidate belief for back_pos(X,Y) with {_45=1, X=1, Y=2}
+[dummy1]      | NO more options for go_depot
+[dummy2]      | no candidate belief for back_pos(BX,BY) with {X=1, _45=1, Y=2}
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy2]      p__13[source(self),url("file:asl/dummy.asl")] is not applicable
+[dummy1]      p__4[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2] Selected event +cell(2,14,empty)[source(percept)]
+[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__14[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_46) : (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,D)) -- with unification {_46=1, X=1, Y=2}
+[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__5[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_11) : (back_pos(X,Y) | (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,skip))) -- with unification {X=1, Y=1, _11=1}
+[dummy2]      | no candidate belief for back_pos(BX,BY) with {_46=1, X=1, Y=2}
+[dummy1]      | no candidate belief for back_pos(X,Y) with {X=1, Y=1, _11=1}
+[miner2] option for +cell(2,14,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=2, Y=14}
+[dummy1]      | no candidate belief for back_pos(BX,BY) with {X=1, Y=1, _11=1}
+[dummy2]      p__14[source(self),url("file:asl/dummy.asl")] is not applicable
+[dummy1]      p__5[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2]      | no candidate belief for gold(X,Y) with {X=2, Y=14}
+[dummy2] option for +pos(1,2,1)[source(percept)] is plan p__15[source(self),url("file:asl/dummy.asl")] +pos(_47,_48,_49) : null -- with unification {_48=2, _47=1, _49=1}
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__6[source(self),url("file:asl/dummy.asl")] +pos(X,Y,_12) : (back_pos(BX,BY) & jia.direction(X,Y,BX,BY,D)) -- with unification {_12=1, X=1, Y=1}
+[dummy2]      p__15[source(self),url("file:asl/dummy.asl")] is applicable with unification {_48=2, _47=1, _49=1}
+[dummy1]      | no candidate belief for back_pos(BX,BY) with {_12=1, X=1, Y=1}
+[miner2] Selected event +cell(1,12,empty)[source(percept)]
+[dummy2] Selected option (@p__15[source(self),url("file:asl/dummy.asl")] +pos(_47,_48,_49) <- !define_new_pos.,{_48=2, _47=1, _49=1}) for event +pos(1,2,1)[source(percept)]
+[dummy1]      p__6[source(self),url("file:asl/dummy.asl")] is not applicable
+[miner2] option for +cell(1,12,empty)[source(percept)] is plan p__178[source(self),url("file:asl/miner.asl")] +cell(X,Y,empty) : (gold(X,Y) & not (.desire(fetch_gold(gold(X,Y))))) -- with unification {X=1, Y=12}
+[dummy2] Selected intention intention 3: 
+    +pos(1,2,1)[source(percept)] <- ... !define_new_pos / {_48=2, _47=1, _49=1}
+
+[miner2]      | no candidate belief for gold(X,Y) with {X=1, Y=12}
+[dummy1] option for +pos(1,1,1)[source(percept)] is plan p__7[source(self),url("file:asl/dummy.asl")] +pos(_13,_14,_15) : null -- with unification {_13=1, _15=1, _14=1}
+[miner2]      p__178[source(self),url("file:asl/miner.asl")] is not applicable
+[dummy2] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
 [dummy1]      p__7[source(self),url("file:asl/dummy.asl")] is applicable with unification {_13=1, _15=1, _14=1}
 [dummy1] Selected option (@p__7[source(self),url("file:asl/dummy.asl")] +pos(_13,_14,_15) <- !define_new_pos.,{_13=1, _15=1, _14=1}) for event +pos(1,1,1)[source(percept)]
 [dummy1] Selected intention intention 4: 
     +pos(1,1,1)[source(percept)] <- ... !define_new_pos / {_13=1, _15=1, _14=1}
 
 [dummy1] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
-[Environment] Cycle 1 finished in 1002 ms, mean is 1002.
+[Environment] Cycle 1 finished in 1001 ms, mean is 1001.
 [Environment] Cycle 2 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 3 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 4 finished in 1000 ms, mean is 1001.
+[Environment] Cycle 3 finished in 1001 ms, mean is 1001.
+[Environment] Cycle 4 finished in 1001 ms, mean is 1001.
 [ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 5 finished in 1000 ms, mean is 1001.
+[Environment] Cycle 5 finished in 1002 ms, mean is 1001.
 [Environment] Cycle 6 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 7 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 8 finished in 1000 ms, mean is 1000.
-[Environment] Cycle 9 finished in 1001 ms, mean is 1000.
+[Environment] Cycle 7 finished in 1000 ms, mean is 1001.
+[Environment] Cycle 8 finished in 1001 ms, mean is 1001.
+[Environment] Cycle 9 finished in 1000 ms, mean is 1000.
 [ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 10 finished in 1000 ms, mean is 1000.
-[Environment] Cycle 11 finished in 1002 ms, mean is 1000.
+[Environment] Cycle 10 finished in 1002 ms, mean is 1001.
+[Environment] Cycle 11 finished in 1001 ms, mean is 1001.
 [Environment] Cycle 12 finished in 1000 ms, mean is 1000.
 [Environment] Cycle 13 finished in 1001 ms, mean is 1000.
-[Environment] Cycle 14 finished in 1001 ms, mean is 1000.
+[Environment] Cycle 14 finished in 1002 ms, mean is 1001.
 [ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 15 finished in 1001 ms, mean is 1000.
-[Environment] Cycle 16 finished in 1001 ms, mean is 1000.
-[Environment] Cycle 17 finished in 1001 ms, mean is 1000.
-[Environment] Cycle 18 finished in 1001 ms, mean is 1000.
-[Environment] Cycle 19 finished in 1001 ms, mean is 1000.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 20 finished in 1001 ms, mean is 1000.
-[Environment] Cycle 21 finished in 1003 ms, mean is 1001.
-[Environment] Cycle 22 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 23 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 24 finished in 1002 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 25 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 26 finished in 1000 ms, mean is 1001.
-[Environment] Cycle 27 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 28 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 29 finished in 1001 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 30 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 31 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 32 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 33 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 34 finished in 1000 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 35 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 36 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 37 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 38 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 39 finished in 1002 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 40 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 41 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 42 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 43 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 44 finished in 1002 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 45 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 46 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 47 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 48 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 49 finished in 1001 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 50 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 51 finished in 1000 ms, mean is 1001.
-[Environment] Cycle 52 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 53 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 54 finished in 1001 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 55 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 56 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 57 finished in 1003 ms, mean is 1001.
-[Environment] Cycle 58 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 59 finished in 1001 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 60 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 61 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 62 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 63 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 64 finished in 1002 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 65 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 66 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 67 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 68 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 69 finished in 1001 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 70 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 71 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 72 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 73 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 74 finished in 1002 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 75 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 76 finished in 1003 ms, mean is 1001.
-[Environment] Cycle 77 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 78 finished in 1000 ms, mean is 1001.
-[Environment] Cycle 79 finished in 1008 ms, mean is 1001.
-[ExecutionControl] Cycle 0 finished by timeout!
-[Environment] Cycle 80 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 81 finished in 1002 ms, mean is 1001.
-[Environment] Cycle 82 finished in 1001 ms, mean is 1001.
-[Environment] Cycle 83 finished in 1002 ms, mean is 1001.
-[miner2] Start sense
-[greens1] Start sense
-[miner2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,13,84), carrying_gold(0), container_has_space, cell(0,12,empty), cell(0,13,empty), cell(0,14,empty), cell(1,12,empty), cell(1,13,empty), cell(1,14,ally), cell(2,12,empty), cell(2,13,empty), cell(2,14,empty)]
-[miner2] Doing (add) brf for depot(1,20,10)[source(self)]
+[Environment] Cycle 15 finished in 1002 ms, mean is 1001.
+[Environment] Cycle 16 finished in 1001 ms, mean is 1001.
+[Environment] Cycle 17 finished in 1001 ms, mean is 1001.
 [leader1] Start sense
+[greens1] Start sense
 [leader1] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
-[miner2] Doing (add) brf for steps(1,100000)[source(self)]
+[miner2] Start sense
+[miner2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,13,18), carrying_gold(0), container_has_space, cell(0,13,empty), cell(0,14,empty), cell(1,12,empty), cell(1,13,empty), cell(1,14,ally), cell(2,12,empty), cell(2,13,empty), cell(2,14,empty)]
 [leader2] Start sense
-[greens2] Start sense
 [miner1] Start sense
 [leader2] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
+[miner2] Doing (add) brf for depot(1,20,10)[source(self)]
+[miner1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,8,18), carrying_gold(0), container_has_space, cell(0,8,empty), cell(0,9,empty), cell(1,7,enemy), cell(1,8,empty), cell(1,9,empty), cell(2,8,empty), cell(2,9,empty)]
+[greens2] Start sense
+[miner2] Doing (add) brf for steps(1,100000)[source(self)]
+[miner1] Doing (add) brf for depot(1,20,10)[source(self)]
+[miner1] Doing (add) brf for steps(1,100000)[source(self)]
+[miner2] Added event +pos(1,13,18)[source(percept)], events = [+pos(1,13,18)[source(percept)]]
+[miner1] Added event +pos(1,8,18)[source(percept)], events = [+pos(1,8,18)[source(percept)]]
+[ExecutionControl] Error:
+java.lang.NullPointerException: Cannot invoke "jason.infra.centralised.CentralisedAgArch.getFirstAgArch()" because the return value of "jason.infra.centralised.BaseCentralisedMAS.getAg(String)" is null
+	at jason.infra.centralised.CentralisedExecutionControl.getAgState(CentralisedExecutionControl.java:76)
+	at jason.control.ExecutionControlGUI.receiveFinishedCycle(ExecutionControlGUI.java:459)
+	at jason.infra.centralised.CentralisedExecutionControl.receiveFinishedCycle(CentralisedExecutionControl.java:53)
+	at jason.infra.centralised.CentralisedAgArch.informCycleFinished(CentralisedAgArch.java:452)
+	at jason.infra.centralised.CentralisedAgArch.run(CentralisedAgArch.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+[ExecutionControl] Error:
+java.lang.NullPointerException: Cannot invoke "jason.infra.centralised.CentralisedAgArch.getFirstAgArch()" because the return value of "jason.infra.centralised.BaseCentralisedMAS.getAg(String)" is null
+	at jason.infra.centralised.CentralisedExecutionControl.getAgState(CentralisedExecutionControl.java:76)
+	at jason.control.ExecutionControlGUI.receiveFinishedCycle(ExecutionControlGUI.java:459)
+	at jason.infra.centralised.CentralisedExecutionControl.receiveFinishedCycle(CentralisedExecutionControl.java:53)
+	at jason.infra.centralised.CentralisedAgArch.informCycleFinished(CentralisedAgArch.java:452)
+	at jason.infra.centralised.CentralisedAgArch.run(CentralisedAgArch.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+[ExecutionControl] Error:
+java.lang.NullPointerException: Cannot invoke "jason.infra.centralised.CentralisedAgArch.getFirstAgArch()" because the return value of "jason.infra.centralised.BaseCentralisedMAS.getAg(String)" is null
+	at jason.infra.centralised.CentralisedExecutionControl.getAgState(CentralisedExecutionControl.java:76)
+	at jason.control.ExecutionControlGUI.receiveFinishedCycle(ExecutionControlGUI.java:459)
+	at jason.infra.centralised.CentralisedExecutionControl.receiveFinishedCycle(CentralisedExecutionControl.java:53)
+	at jason.infra.centralised.CentralisedAgArch.informCycleFinished(CentralisedAgArch.java:452)
+	at jason.infra.centralised.CentralisedAgArch.run(CentralisedAgArch.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+[greens2] I finished!
+[ExecutionControl] Error:
+java.lang.NullPointerException: Cannot invoke "jason.infra.centralised.CentralisedAgArch.getFirstAgArch()" because the return value of "jason.infra.centralised.BaseCentralisedMAS.getAg(String)" is null
+	at jason.infra.centralised.CentralisedExecutionControl.getAgState(CentralisedExecutionControl.java:76)
+	at jason.control.ExecutionControlGUI.receiveFinishedCycle(ExecutionControlGUI.java:459)
+	at jason.infra.centralised.CentralisedExecutionControl.receiveFinishedCycle(CentralisedExecutionControl.java:53)
+	at jason.infra.centralised.CentralisedAgArch.informCycleFinished(CentralisedAgArch.java:452)
+	at jason.infra.centralised.CentralisedAgArch.run(CentralisedAgArch.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+[leader2] I finished!
+[leader1] I finished!
+[greens1] I finished!
+[ExecutionControl] Error:
+java.lang.NullPointerException: Cannot invoke "jason.infra.centralised.CentralisedAgArch.getFirstAgArch()" because the return value of "jason.infra.centralised.BaseCentralisedMAS.getAg(String)" is null
+	at jason.infra.centralised.CentralisedExecutionControl.getAgState(CentralisedExecutionControl.java:76)
+	at jason.control.ExecutionControlGUI.receiveFinishedCycle(ExecutionControlGUI.java:459)
+	at jason.infra.centralised.CentralisedExecutionControl.receiveFinishedCycle(CentralisedExecutionControl.java:53)
+	at jason.infra.centralised.CentralisedAgArch.informCycleFinished(CentralisedAgArch.java:452)
+	at jason.infra.centralised.CentralisedAgArch.run(CentralisedAgArch.java:269)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
+[miner1] I finished!
+[dummy2] Start sense
+[dummy2] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,2,18), carrying_gold(0), container_has_space, cell(0,1,empty), cell(0,2,empty), cell(0,3,empty), cell(1,2,empty), cell(1,3,empty), cell(2,1,empty), cell(2,2,empty), cell(2,3,empty)]
+[dummy1] Start sense
+[dummy1] percepts: [gsize(1,30,30), depot(1,20,10), steps(1,100000), pos(1,1,18), carrying_gold(0), container_has_space, cell(0,0,empty), cell(0,1,empty), cell(0,2,empty), cell(1,0,empty), cell(1,1,empty), cell(1,2,ally), cell(2,0,empty), cell(2,1,empty), cell(2,2,empty)]
+[dummy2] Doing (add) brf for depot(1,20,10)[source(self)]
+[dummy1] Doing (add) brf for depot(1,20,10)[source(self)]
+[dummy2] Doing (add) brf for steps(1,100000)[source(self)]
+[dummy1] Doing (add) brf for steps(1,100000)[source(self)]
+[dummy2] Added event +pos(1,2,18)[source(percept)], events = [+!define_new_pos[source(self)]
+intention 3: 
+    +pos(1,2,1)[source(percept)] <- ... !define_new_pos / {_48=2, _47=1, _49=1}
+, +pos(1,2,18)[source(percept)]]
+[dummy1] Added event +pos(1,1,18)[source(percept)], events = [+!define_new_pos[source(self)]
+intention 4: 
+    +pos(1,1,1)[source(percept)] <- ... !define_new_pos / {_13=1, _15=1, _14=1}
+, +pos(1,1,18)[source(percept)]]
+[dummy1] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
+[dummy2] Informing controller that I finished a reasoning cycle 0. Breakpoint is false
