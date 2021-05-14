@@ -14,21 +14,14 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
+public class Environment extends TimeSteppedEnvironment {
 
-/**
- * Implementation of the local simulator for the competition scenario.
- *
- * @author Jomi
- */
-public class MiningEnvironment extends TimeSteppedEnvironment {
-
-    private Logger          logger   = Logger.getLogger("jasonTeamSimLocal.mas2j." + MiningEnvironment.class.getName());
+    private Logger          logger   = Logger.getLogger("jasonTeamSimLocal.mas2j." + Environment.class.getName());
 
     WorldModel              model;
     WorldView               view;
 
-    int                     simId    = 5; // type of environment
-    int                     nbWorlds = 10;
+    int                     simId    = 1; // type of environment
 
     Random                  random   = new Random();
 
@@ -144,7 +137,7 @@ public class MiningEnvironment extends TimeSteppedEnvironment {
         try {
             switch (w) {
             case 1:
-                model = WorldFactory.world2();
+                model = WorldModel.theworld();
                 break;
             default:
                 logger.warning("Invalid index!");

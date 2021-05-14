@@ -11,7 +11,7 @@
 MAS miners {
     infrastructure: Centralised
 
-    environment: env.MiningEnvironment(1, 100, yes, "dummy", "miner", "greens", 1000)
+    environment: env.Environment(1, 100, yes, "dummy", "miner", "greens", 1000)
         // parameters: 1. environment configuration id (from 1 to 13)
         //                   11 is Fence in 2007 Contest
         //                   12 is Semiramis in 2007 Contest
@@ -32,7 +32,7 @@ MAS miners {
 
 		// green team, bickli
 		greens
-			beliefBaseClass agent.DiscardBelsBB("my_status","picked","committed_to","cell")#2;
+			beliefBaseClass agent.DiscardBelsBB("my_status","picked","committed_to","cell") #2;
 		
         miner  //[teamSize=6]
                agentClass agent.SelectEvent

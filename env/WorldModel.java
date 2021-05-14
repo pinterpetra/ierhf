@@ -5,12 +5,6 @@ import jason.environment.grid.Location;
 
 import java.util.logging.Logger;
 
-
-/**
- * Class used to model the scenario (for an global view -- used by environment simulator)
- *
- * @author Jomi
- */
 public class WorldModel extends GridWorldModel {
 
     public static final int   GOLD  = 16;
@@ -226,15 +220,6 @@ public class WorldModel extends GridWorldModel {
         return false;
     }
 
-
-    /*public void wall(int x1, int y1, int x2, int y2) {
-        for (int i=x1; i<=x2; i++) {
-            for (int j=y1; j<=y2; j++) {
-                data[i][j] = OBSTACLE;
-            }
-        }
-    }*/
-
     public String toString() {
         StringBuilder s = new StringBuilder();
 
@@ -260,5 +245,18 @@ public class WorldModel extends GridWorldModel {
         s.append("---------------------------------------------\n");
 
         return s.toString();
+    }
+
+    public static WorldModel theworld() throws Exception {
+        WorldModel model = new WorldModel(30, 30, 6);
+        model.setDepot(20, 10);
+        model.setAgPos(0, 1, 1);
+        model.setAgPos(1, 1, 2);
+        model.setAgPos(2, 1, 7);
+        model.setAgPos(3, 1, 8);
+        model.setAgPos(4, 1, 13);
+        model.setAgPos(5, 1, 14);
+        model.setInitialNbGolds(model.countObjects(WorldModel.GOLD));
+        return model;
     }
 }

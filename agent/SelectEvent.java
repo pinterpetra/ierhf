@@ -9,11 +9,6 @@ import jason.asSyntax.Trigger;
 import java.util.Iterator;
 import java.util.Queue;
 
-/**
- * change the default select event function to prefer cell(_,_,gold) events.
- *
- * @author Jomi
- */
 public class SelectEvent extends Agent {
 
     private Trigger gold    = Trigger.parseTrigger("+cell(_,_,gold)");

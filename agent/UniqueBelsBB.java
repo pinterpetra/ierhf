@@ -10,17 +10,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-/**
- * Customised version of Belief Base where some beliefs are unique (with primary keys).
- * <p>E.g.:<br/>
- * <code>beliefBaseClass agent.UniqueBelsBB("student(key,_)", "depot(_,_,_)")</code>
- * <br/>
- * The belief "student/2" has the first argument as its key, so the BB will never has
- * two students with the same key. Or, two students in the BB will have two different keys.
- * The belief "depot/3" has no key, so there will be always only one "depot" in the BB.
- *
- * @author jomi
- */
 public class UniqueBelsBB extends DefaultBeliefBase {
     //static private Logger logger = Logger.getLogger(UniqueBelsBB.class.getName());
 

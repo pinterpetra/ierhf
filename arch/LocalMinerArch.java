@@ -10,11 +10,6 @@ import jason.asSyntax.NumberTerm;
 /** architecture for local simulator */
 public class LocalMinerArch extends MinerArch {
 
-
-    /** this version of perceive is used in local simulator. it gets
-        the perception and updates the world model. only relevant percepts
-        are leaved in the list of perception for the agent.
-      */
     @Override
     public Collection<Literal> perceive() {
         Collection<Literal> per = super.perceive();

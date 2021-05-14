@@ -6,12 +6,6 @@ import java.util.Random;
 
 import env.WorldModel;
 
-
-/**
- * Class used to model the scenario (for an agent local view)
- *
- * @author jomi
- */
 public class LocalWorldModel extends WorldModel {
 
     int[][]                   visited; // count the visited locations

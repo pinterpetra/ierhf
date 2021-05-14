@@ -23,17 +23,11 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-
-/**
- * graphical view for some world model
- *
- * @author Jomi
- */
 public class WorldView extends GridWorldView {
 
     private static final long serialVersionUID = 1L;
 
-    MiningEnvironment env = null;
+    Environment env = null;
 
     JLabel     jCycle;
     JLabel     jGoldsC;
@@ -169,7 +163,7 @@ public class WorldView extends GridWorldView {
         });
     }
 
-    public void setEnv(MiningEnvironment env) {
+    public void setEnv(Environment env) {
         this.env = env;
         scenarios.setSelectedIndex(env.getSimId()-1);
     }
@@ -194,28 +188,8 @@ public class WorldView extends GridWorldView {
         case WorldModel.DEPOT:
             drawDepot(g, x, y);
             break;
-        /*case WorldModel.GOLD:
-            drawGold(g, x, y);
-            break;*/
-        /*case WorldModel.ENEMY:
-            drawEnemy(g, x, y);
-            break;*/
-        /*case WorldModel.TARGET:
-            drawTarget(g, x, y);
-            break;*/
         }
     }
-
-    /*
-    Color[] agColor = { Color.blue,
-                        new Color(249,255,222),
-                        Color.orange, //new Color(228,255,103),
-                        new Color(206,255,0) } ;
-    Color[] idColor = { Color.white,
-                        Color.black,
-                        Color.darkGray,
-                        Color.red } ;
-    */
 
     @Override
     public void drawAgent(Graphics g, int x, int y, Color c, int id) {
@@ -259,11 +233,16 @@ public class WorldView extends GridWorldView {
 
     //ez az etterem!!!
     public void drawDepot(Graphics g, int x, int y) {
-        g.setColor(Color.green);
+        g.setColor(Color.gray);
         g.fillRect(x * cellSizeW, y * cellSizeH, cellSizeW, cellSizeH);
-        g.setColor(Color.pink);
+        g.setColor(Color.white);
         g.drawRect(x * cellSizeW + 2, y * cellSizeH + 2, cellSizeW - 4, cellSizeH - 4);
         g.drawLine(x * cellSizeW + 2, y * cellSizeH + 2, (x + 1) * cellSizeW - 2, (y + 1) * cellSizeH - 2);
         g.drawLine(x * cellSizeW + 2, (y + 1) * cellSizeH - 2, (x + 1) * cellSizeW - 2, y * cellSizeH + 2);
     }
+
+    public static void main(String[] args) throws Exception {
+        //new WorldView("Test - Fence", worldFromContest2007("Semiramis"), 1000);
+    }
+
 }
