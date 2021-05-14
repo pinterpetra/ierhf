@@ -42,10 +42,11 @@ public class WorldView extends GridWorldView {
     }
 
     public WorldView(WorldModel model, int windowSize) {
-        this("Mining World", model, windowSize);
+        this("Delivery System for Restaurants", model, windowSize);
     }
 
     public WorldView(String title, WorldModel model) {
+
         this(title,model,800);
     }
 
@@ -242,7 +243,7 @@ public class WorldView extends GridWorldView {
     }
 
     public static void main(String[] args) throws Exception {
-        //new WorldView("Test - Fence", worldFromContest2007("Semiramis"), 1000);
+        WorldView ww = new WorldView("Delivery System for Restaurants", WorldModel.theworld(), 1000);
     }
 
 }

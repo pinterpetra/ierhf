@@ -10,8 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class UniqueBelsBB extends DefaultBeliefBase {
-    //static private Logger logger = Logger.getLogger(UniqueBelsBB.class.getName());
+public class BeliefBaseWithUniqueBeliefs extends DefaultBeliefBase {
 
     Map<String,Literal> uniqueBels = new HashMap<String,Literal>();
     Unifier             u = new Unifier();

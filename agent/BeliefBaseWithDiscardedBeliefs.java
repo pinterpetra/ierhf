@@ -7,8 +7,7 @@ import jason.bb.DefaultBeliefBase;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DiscardBelsBB extends DefaultBeliefBase {
-    //static private Logger logger = Logger.getLogger(UniqueBelsBB.class.getName());
+public class BeliefBaseWithDiscardedBeliefs extends DefaultBeliefBase {
 
     Set<String> discartedBels = new HashSet<String>();
 

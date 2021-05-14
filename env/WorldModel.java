@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 
 public class WorldModel extends GridWorldModel {
 
-    public static final int   GOLD  = 16;
+    public static final int   GOLD  = 0;
     public static final int   DEPOT = 32;
-    public static final int   ENEMY = 64;
+    public static final int   ENEMY = 0;
     public static final int   TARGET = 128; // one agent target location
 
     public static final int   AG_CAPACITY = 3; // how many golds an agent can carry

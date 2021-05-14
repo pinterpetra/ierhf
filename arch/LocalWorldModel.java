@@ -13,8 +13,6 @@ public class LocalWorldModel extends WorldModel {
 
     private Random            random = new Random();
 
-    //private Logger            logger   = Logger.getLogger("jasonTeamSimLocal.mas2j." + LocalWorldModel.class.getName());
-
     public static LocalWorldModel create(int w, int h, int nbAg) {
         return new LocalWorldModel(w,h,nbAg);
     }
@@ -47,9 +45,6 @@ public class LocalWorldModel extends WorldModel {
         return visited[l.x][l.y];
     }
 
-    public void incVisited(Location l) {
-        incVisited(l.x,l.y);
-    }
     public void incVisited(int x, int y) {
         visited[x][y] += 2;
 
@@ -65,21 +60,8 @@ public class LocalWorldModel extends WorldModel {
 
     /** returns the near location of x,y that was least visited */
     public Location getNearLeastVisited(int agx, int agy) {
-        //int distanceToBorder = (agx < getWidth()/2 ? agx : getWidth() - agx) - 1;
         Location agloc = new Location(agx,agy);
 
-        /*
-        logger.info("------");
-        for (int i = 0; i < getWidth(); i++) {
-            String line = "";
-            for (int j = 0; j < getHeight(); j++) {
-                line += visited[j][i] + " ";
-            }
-            logger.info(line);
-        }
-        */
-
-        //int visitedTarget = 0;
         while (true) {
 
             int x = agx;
@@ -87,24 +69,24 @@ public class LocalWorldModel extends WorldModel {
             int w = 1;
             int dx = 0;
             int dy = 0;
-            int stage = 1;//(x % 2 == 0 ? 1 : 2);
+            int stage = 1;
             Location better = null;
 
-            while (w < getWidth()) { //( (w/2+distanceToBorder) < getWidth()) {
+            while (w < getWidth()) {
                 switch (stage) {
                 case 1:
                     if (dx < w) {
                         dx++;
                         break;
                     } else {
-                        stage = 2;//(x % 2 == 0) ? 2 : 3;
+                        stage = 2;
                     }
                 case 2:
                     if (dy < w) {
                         dy++;
                         break;
                     } else {
-                        stage = 3;//(x % 2 == 0) ? 3 : 1;
+                        stage = 3;
                     }
                 case 3:
                     if (dx > 0) {
@@ -140,7 +122,7 @@ public class LocalWorldModel extends WorldModel {
                         }
                     }
                 }
-            } // end while
+            }
 
             if (better != null) {
                 return better;

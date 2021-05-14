@@ -78,7 +78,7 @@ public class MinerArch extends AgArch {
         if (view != null) {
             view.dispose();
         }
-        model = new LocalWorldModel(w, h, teamSize);
+       model = new LocalWorldModel(w, h, teamSize);
         if (gui) {
             view = new WorldView("Mining (view of miner "+(getMyId()+1)+")",model);
         }
@@ -149,7 +149,6 @@ public class MinerArch extends AgArch {
 
         if (isRobotFrozen()) {
             try {
-                //logger.info("** Arch adding restart for "+getAgName()+", TS="+getTS().getCurrentTask()+", "+getTS().getC());
                 getTS().getC().create();
 
                 getTS().getAg().getBB().abolish(new LiteralImpl("restart").getPredicateIndicator());
@@ -157,7 +156,6 @@ public class MinerArch extends AgArch {
                 getTS().getAg().addBel(new LiteralImpl("restart"));
                 lo2 = new Location(-1,-1); // to not restart again in the next cycle
 
-                //getTS().stopCycle();
             } catch (Exception e) {
                 logger.info("Error in restart!"+ e);
             }
@@ -178,11 +176,6 @@ public class MinerArch extends AgArch {
         model.add(WorldModel.GOLD, x, y);
     }
 
-    // not used, the allies send messages with their location
-    //void allyPerceived(int x, int y) {
-    //    model.add(WorldModel.AGENT, x, y);
-    //}
-
     void enemyPerceived(int x, int y) {
         model.add(WorldModel.ENEMY, x, y);
     }
@@ -195,7 +188,6 @@ public class MinerArch extends AgArch {
     void setCycle(int s) {
         cycle = s;
         if (view != null) view.setCycle(cycle);
-        //if (writeModelT != null) writeModelT.writeModel();
     }
 
     /** change broadcast to send messages to only my team mates */
@@ -231,7 +223,6 @@ public class MinerArch extends AgArch {
                         model.add(WorldModel.OBSTACLE, x, y);
                     }
                     im.remove();
-                    //getTS().getAg().getLogger().info("received obs="+p);
 
                 } else if (ms.startsWith("my_status") && model != null) {
                     // update others location
@@ -245,7 +236,6 @@ public class MinerArch extends AgArch {
                             model.setAgPos(agid, x, y);
                             model.setGoldsWithAg(agid, g);
                             model.incVisited(x, y);
-                            //getTS().getAg().getLogger().info("ag pos "+getMinerId(m.getSender())+" = "+x+","+y);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }

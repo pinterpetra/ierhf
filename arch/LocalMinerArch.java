@@ -38,12 +38,6 @@ public class LocalMinerArch extends MinerArch {
                         int n = (int)((NumberTerm)p.getTerm(0)).solve();
                         carriedGoldsPerceived(n);
 
-                        //} else if (ps.startsWith("cell") && ps.endsWith("ally)")  && model != null) {
-                        //int x = (int)((NumberTerm)p.getTerm(0)).solve();
-                        //int y = (int)((NumberTerm)p.getTerm(1)).solve();
-                        //allyPerceived(x, y);
-                        //ip.remove(); // the agent does not perceive Others
-
                     } else if (ps.startsWith("cell") && ps.endsWith("gold)")  && model != null) {
                         int x = (int)((NumberTerm)p.getTerm(0)).solve();
                         int y = (int)((NumberTerm)p.getTerm(1)).solve();

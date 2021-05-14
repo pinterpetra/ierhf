@@ -83,7 +83,6 @@ public class Environment extends TimeSteppedEnvironment {
 
             // check failure
             if (!action.equals(drop) && random.nextDouble() < model.getAgFatigue(agId)) {
-                //logger.info("Action "+action+" from agent "+ag+" failed!");
                 return true; // does nothing
             }
 
