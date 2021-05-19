@@ -14,16 +14,16 @@ public class HouseModelOwn extends GridWorldModel {
     public static final int GSize =10;
 
     boolean mydepotOpen   = false; // whether the mydepot is open
-	//boolean mydepotmotorOpen   = false;
+	boolean mydepotmotorOpen   = false;
 	
     boolean carryingFood = false; // whether the car is carrying food
-	//boolean carryingJuice = false;
+	boolean carryingJuice = false;
 	
     int foodConsumptionCount        = 0; // how many sip the restaurant did
-	//int juiceConsumptionCount        = 0;
+	int juiceConsumptionCount        = 0;
 	
     int availableFoods  = 6; // how many foods are available
-	//int availableJuices  = 6;
+	int availableJuices  = 8;
 
     Location lMydepot = new Location(0,0);
 	Location lMydepotmotor = new Location(0,GSize-1); //motornak
@@ -37,7 +37,7 @@ public class HouseModelOwn extends GridWorldModel {
         // initial location of car (column 3, line 3)
         // ag code 0 means the car
         setAgPos(0, GSize/2, GSize/2);
-		//setAgPos(1, GSize/4, GSize/4); //ez lenne az 1 miatt a motor?
+		//setAgPos(1, GSize/2+1, GSize/2); //ez lenne az 1 miatt a motor?
 
         // initial location of mydepot and restaurant
         add(MYDEPOT, lMydepot);
@@ -54,15 +54,14 @@ public class HouseModelOwn extends GridWorldModel {
             return false;
         }
     }
-
-	/*boolean openMydepotmotor() {
+	boolean openMydepotmotor() {
         if (!mydepotmotorOpen) {
             mydepotmotorOpen = true;
             return true;
         } else {
             return false;
         }
-    }*/
+    }
 
 	
     boolean closeMydepot() {
@@ -73,15 +72,14 @@ public class HouseModelOwn extends GridWorldModel {
             return false;
         }
     }
-	
-	/*boolean closeMydepotmotor() {
+	boolean closeMydepotmotor() {
         if (mydepotmotorOpen) {
             mydepotmotorOpen = false;
             return true;
         } else {
             return false;
         }
-    }*/
+    }
 
     boolean moveTowards(Location dest) {
         Location r1 = getAgPos(0);
@@ -98,14 +96,13 @@ public class HouseModelOwn extends GridWorldModel {
         }
         return true;
     }
-	
 	//ugyanúgy, csak a motor mozgásának
-	/*boolean moveTowards(Location dest) {
+	boolean moveTowardsmotor(Location dest) {
         Location r2 = getAgPos(0);
-        if (r2.x < dest.x)        r1.x++;
-        else if (r2.x > dest.x)   r1.x--;
-        if (r2.y < dest.y)        r1.y++;
-        else if (r2.y > dest.y)   r1.y--;
+        if (r2.x < dest.x)        r2.x++;
+        else if (r2.x > dest.x)   r2.x--;
+        if (r2.y < dest.y)        r2.y++;
+        else if (r2.y > dest.y)   r2.y--;
         setAgPos(1, r2); // move the motor?? in the grid
 
         // repaint the mydepotmotor and restaurant locations
@@ -114,7 +111,7 @@ public class HouseModelOwn extends GridWorldModel {
             view.update(lRestaurant.x,lRestaurant.y);
         }
         return true;
-    }*/
+    }
 
     boolean getFood() {
         if (mydepotOpen && availableFoods > 0 && !carryingFood) {
@@ -127,8 +124,7 @@ public class HouseModelOwn extends GridWorldModel {
             return false;
         }
     }
-	
-	/*boolean getJuice() {
+	boolean getJuice() {
         if (mydepotmotorOpen && availableJuices > 0 && !carryingJuice) {
             availableJuices--;
             carryingJuice = true;
@@ -138,7 +134,7 @@ public class HouseModelOwn extends GridWorldModel {
         } else {
             return false;
         }
-    }*/
+    }
 
     boolean addFood(int n) {
         availableFoods += n;
@@ -146,13 +142,12 @@ public class HouseModelOwn extends GridWorldModel {
             view.update(lMydepot.x,lMydepot.y);
         return true;
     }
-	
-	/*boolean addJuice(int n) {
+	boolean addJuice(int n) {
         availableJuices += n;
         if (view != null)
             view.update(lMydepotmotor.x,lMydepotmotor.y);
         return true;
-    }*/
+    }
 
     boolean handInFood() {
         if (carryingFood) {
@@ -165,8 +160,7 @@ public class HouseModelOwn extends GridWorldModel {
             return false;
         }
     }
-	
-	/*boolean handInJuice() {
+	boolean handInJuice() {
         if (carryingJuice) {
             juiceConsumptionCount = 15;
             carryingJuice = false;
@@ -176,7 +170,7 @@ public class HouseModelOwn extends GridWorldModel {
         } else {
             return false;
         }
-    }*/
+    }
 
     boolean sipFood() {
         if (foodConsumptionCount > 0) {
@@ -188,8 +182,7 @@ public class HouseModelOwn extends GridWorldModel {
             return false;
         }
     }
-	
-	/*boolean sipJuice() {
+	boolean sipJuice() {
         if (juiceConsumptionCount > 0) {
             juiceConsumptionCount--;
             if (view != null)
@@ -198,5 +191,5 @@ public class HouseModelOwn extends GridWorldModel {
         } else {
             return false;
         }
-    }*/
+    }
 }

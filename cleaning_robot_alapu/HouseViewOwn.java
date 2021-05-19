@@ -13,7 +13,7 @@ public class HouseViewOwn extends GridWorldView {
     public HouseViewOwn(HouseModelOwn model) {
         super(model, "Restaurant Delivery System", 700);
         hmodel = model;
-        defaultFont = new Font("Arial", Font.BOLD, 16); // change default font
+        defaultFont = new Font("Arial", Font.BOLD, 12); // change default font
         setVisible(true);
         repaint();
     }
@@ -25,6 +25,7 @@ public class HouseViewOwn extends GridWorldView {
 		Location lMotor = hmodel.getAgPos(1);
 		
         super.drawAgent(g, x, y, Color.lightGray, -1);
+		//super.drawAgent(g, x-1, y, Color.lightGray, -1); //próbálkozom több ágenst (motor, bicikli) csinálni
         switch (object) {
         case HouseModelOwn.MYDEPOT:
             if (lCar.equals(hmodel.lMydepot)) {
@@ -37,17 +38,17 @@ public class HouseViewOwn extends GridWorldView {
 		//motornak is kéne depot, itt pl kell írni ahhoz, nem csinál semmit
 		case HouseModelOwn.MYDEPOTMOTOR:
 			if (lCar.equals(hmodel.lMydepotmotor)) {
-					super.drawAgent(g, x, y, Color.green, -1);
+					super.drawAgent(g, x, y, Color.green, -2);
 				}
             g.setColor(Color.green);
-            drawString(g, x, y, defaultFont, "Mydepotmotor");
+            drawString(g, x, y, defaultFont, "MotorDepot");
             break;
 		case HouseModelOwn.MYDEPOTBIC:
 			if (lCar.equals(hmodel.lMydepotbic)) {
-					super.drawAgent(g, x, y, Color.green, -1);
+					super.drawAgent(g, x, y, Color.green, -3);
 				}
             g.setColor(Color.green);
-            drawString(g, x, y, defaultFont, "Mydepotbic");
+            drawString(g, x, y, defaultFont, "BicycleDepot");
             break;
 			
         case HouseModelOwn.RESTAURANT:
@@ -75,5 +76,13 @@ public class HouseViewOwn extends GridWorldView {
             g.setColor(Color.black);
             super.drawString(g, x, y, defaultFont, "Car");
         }
+		/*Location lMotor = hmodel.getAgPos(1);
+		if (!lMotor.equals(hmodel.lRestaurant) && !lMotor.equals(hmodel.lMydepotmotor)) {
+            c = Color.yellow;
+            if (hmodel.carryingJuice) c = Color.red;
+            super.drawAgent(g, x, y, c, -1);
+            g.setColor(Color.black);
+            super.drawString(g, x, y, defaultFont, "Motor");
+        }*/
     }
 }
