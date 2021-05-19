@@ -12,9 +12,19 @@ public class HouseEnvOwn extends Environment {
     public static final Literal hb  = Literal.parseLiteral("hand_in(food)");
     public static final Literal sb  = Literal.parseLiteral("sip(food)");
     public static final Literal hob = Literal.parseLiteral("has(restaurant,food)");
+	
+	/*public static final Literal ofm  = Literal.parseLiteral("open(mydepotmotor)");
+    public static final Literal clfm = Literal.parseLiteral("close(mydepotmotor)");
+    public static final Literal gbm  = Literal.parseLiteral("get(juice)");
+    public static final Literal hbm  = Literal.parseLiteral("hand_in(juice)");
+    public static final Literal sbm  = Literal.parseLiteral("sip(juice)");
+    public static final Literal hobm = Literal.parseLiteral("has(restaurant,juice)");*/
 
     public static final Literal af = Literal.parseLiteral("at(car,mydepot)");
     public static final Literal ao = Literal.parseLiteral("at(car,restaurant)");
+	
+	/*public static final Literal afm = Literal.parseLiteral("at(motor,mydepotmotor)");
+    public static final Literal aom = Literal.parseLiteral("at(motor,restaurant)");*/
 
     static Logger logger = Logger.getLogger(HouseEnvOwn.class.getName());
 
@@ -36,10 +46,12 @@ public class HouseEnvOwn extends Environment {
     void updatePercepts() {
         // clear the percepts of the agents
         clearPercepts("car");
+		clearPercepts("motor");
         clearPercepts("restaurant");
 
         // get the car location
         Location lCar = model.getAgPos(0);
+		//Location lMotor = model.getAgPos(1);
 
         // add agent location to its percepts
         if (lCar.equals(model.lMydepot)) {
@@ -48,15 +60,28 @@ public class HouseEnvOwn extends Environment {
         if (lCar.equals(model.lRestaurant)) {
             addPercept("car", ao);
         }
+		/*if (lMotor.equals(model.lMydepotmotor)) {
+            addPercept("motor", afm);
+        }
+        if (lMotor.equals(model.lRestaurant)) {
+            addPercept("motor", aom);
+        }*/
 
         // add food "status" the percepts
         if (model.mydepotOpen) {
             addPercept("car", Literal.parseLiteral("stock(food,"+model.availableFoods+")"));
         }
-        if (model.sipCount > 0) {
+        if (model.foodConsumptionCount > 0) {
             addPercept("car", hob);
             addPercept("restaurant", hob);
         }
+		/*if (model.mydepotmotorOpen) {
+            addPercept("motor", Literal.parseLiteral("stock(juice,"+model.availableJuices+")"));
+        }
+        if (model.juiceConsumptionCount > 0) {
+            addPercept("motor", hobm);
+            addPercept("restaurant", hobm);
+        }*/
     }
 
 

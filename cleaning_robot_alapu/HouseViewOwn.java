@@ -11,7 +11,7 @@ public class HouseViewOwn extends GridWorldView {
     HouseModelOwn hmodel;
 
     public HouseViewOwn(HouseModelOwn model) {
-        super(model, "Domestic Car", 700);
+        super(model, "Restaurant Delivery System", 700);
         hmodel = model;
         defaultFont = new Font("Arial", Font.BOLD, 16); // change default font
         setVisible(true);
@@ -22,6 +22,8 @@ public class HouseViewOwn extends GridWorldView {
     @Override
     public void draw(Graphics g, int x, int y, int object) {
         Location lCar = hmodel.getAgPos(0);
+		//Location lMotor = hmodel.getAgPos(1);
+		
         super.drawAgent(g, x, y, Color.lightGray, -1);
         switch (object) {
         case HouseModelOwn.MYDEPOT:
@@ -31,13 +33,21 @@ public class HouseViewOwn extends GridWorldView {
             g.setColor(Color.black);
             drawString(g, x, y, defaultFont, "Mydepot ("+hmodel.availableFoods+")");
             break;
+		//motornak is kéne depot, itt pl kell írni ahhoz
+		/*case HouseModelOwn.MYDEPOTMOTOR:
+            if (lMotor.equals(hmodel.lMydepotmotor)) {
+                super.drawAgent(g, x, y, Color.yellow, -1);
+            }
+            g.setColor(Color.black);
+            drawString(g, x, y, defaultFont, "Mydepotmotor ("+hmodel.availableJuices+")");
+            break;*/
         case HouseModelOwn.RESTAURANT:
             if (lCar.equals(hmodel.lRestaurant)) {
                 super.drawAgent(g, x, y, Color.yellow, -1);
             }
             String o = "Restaurant";
-            if (hmodel.sipCount > 0) {
-                o +=  " ("+hmodel.sipCount+")";
+            if (hmodel.foodConsumptionCount > 0) {
+                o +=  " ("+hmodel.foodConsumptionCount+")";
             }
             g.setColor(Color.black);
             drawString(g, x, y, defaultFont, o);

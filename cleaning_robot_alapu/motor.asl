@@ -1,7 +1,7 @@
 /* Initial beliefs and rules */
 
-// initially, I believe that there is some juice in the mydepot
-available(juice,mydepot).
+// initially, I believe that there is some juice in the mydepotmotor
+available(juice,mydepotmotor).
 
 // my restaurant should not consume more than 15 juices a day :-)
 limit(juice,15).
@@ -16,11 +16,11 @@ too_much(B) :-
 /* Plans */
 
 +!has(restaurant,juice)
-   :  available(juice,mydepot) & not too_much(juice)
-   <- !at(motor,mydepot);
-      open(mydepot);
+   :  available(juice,mydepotmotor) & not too_much(juice)
+   <- !at(motor,mydepotmotor);
+      open(mydepotmotor);
       get(juice);
-      close(mydepot);
+      close(mydepotmotor);
       !at(motor,restaurant);
       hand_in(juice);
       ?has(restaurant,juice);
@@ -29,9 +29,9 @@ too_much(B) :-
       +consumed(YY,MM,DD,HH,NN,SS,juice).
 
 +!has(restaurant,juice)
-   :  not available(juice,mydepot)
+   :  not available(juice,mydepotmotor)
    <- .send(supermarket, achieve, order(juice,5));
-      !at(motor,mydepot). // go to mydepot and wait there.
+      !at(motor,mydepotmotor). // go to mydepotmotor and wait there.
 
 +!has(restaurant,juice)
    :  too_much(juice) & limit(juice,L)
@@ -53,17 +53,17 @@ too_much(B) :-
 // when the supermarket makes a delivery, try the 'has' goal again
 +delivered(juice,_Qtd,_OrderId)[source(supermarket)]
   :  true
-  <- +available(juice,mydepot);
+  <- +available(juice,mydepotmotor);
      !has(restaurant,juice).
 
-// when the mydepot is opened, the juice stock is perceived
+// when the mydepotmotor is opened, the juice stock is perceived
 // and thus the available belief is updated
 +stock(juice,0)
-   :  available(juice,mydepot)
-   <- -available(juice,mydepot).
+   :  available(juice,mydepotmotor)
+   <- -available(juice,mydepotmotor).
 +stock(juice,N)
-   :  N > 0 & not available(juice,mydepot)
-   <- -+available(juice,mydepot).
+   :  N > 0 & not available(juice,mydepotmotor)
+   <- -+available(juice,mydepotmotor).
 
 +?time(T) : true
   <-  time.check(T).
