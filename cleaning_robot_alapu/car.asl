@@ -65,6 +65,6 @@ too_much(B) :-
    :  N > 0 & not available(food,mydepot)
    <- -+available(food,mydepot).
 
-+?time(T) : true
+/*+?time(T) : true
   <-  time.check(T).
-
+*/

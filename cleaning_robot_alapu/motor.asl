@@ -65,6 +65,7 @@ too_much(B) :-
    :  N > 0 & not available(juice,mydepotmotor)
    <- -+available(juice,mydepotmotor).
 
+   /*
 +?time(T) : true
   <-  time.check(T).
-
+*/

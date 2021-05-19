@@ -25,8 +25,7 @@ public class HouseViewOwn extends GridWorldView {
 		Location lMotor = hmodel.getAgPos(1);
 		
         super.drawAgent(g, x, y, Color.lightGray, -1);
-		//super.drawAgent(g, x-1, y, Color.lightGray, -1); //próbálkozom több ágenst (motor, bicikli) csinálni
-        switch (object) {
+		switch (object) {
         case HouseModelOwn.MYDEPOT:
             if (lCar.equals(hmodel.lMydepot)) {
                 super.drawAgent(g, x, y, Color.orange, -1);
@@ -34,23 +33,20 @@ public class HouseViewOwn extends GridWorldView {
             g.setColor(Color.black);
             drawString(g, x, y, defaultFont, "CarDepot ("+hmodel.availableFoods+")");
             break;
-			
-		//motornak is kéne depot, itt pl kell írni ahhoz, nem csinál semmit
-		case HouseModelOwn.MYDEPOTMOTOR:
+			case HouseModelOwn.MYDEPOTMOTOR:
 			if (lCar.equals(hmodel.lMydepotmotor)) {
 					super.drawAgent(g, x, y, Color.green, -2);
 				}
-            g.setColor(Color.green);
+            g.setColor(Color.black);
             drawString(g, x, y, defaultFont, "MotorDepot");
             break;
 		case HouseModelOwn.MYDEPOTBIC:
 			if (lCar.equals(hmodel.lMydepotbic)) {
 					super.drawAgent(g, x, y, Color.green, -3);
 				}
-            g.setColor(Color.red);
+            g.setColor(Color.black);
             drawString(g, x, y, defaultFont, "BicycleDepot");
             break;
-			
         case HouseModelOwn.RESTAURANT:
             if (lCar.equals(hmodel.lRestaurant)) {
                 super.drawAgent(g, x, y, Color.orange, -1);
@@ -69,21 +65,20 @@ public class HouseViewOwn extends GridWorldView {
     @Override
     public void drawAgent(Graphics g, int x, int y, Color c, int id) {
         Location lCar = hmodel.getAgPos(0);
-        if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot)) {
+		Location lMotor = hmodel.getAgPos(1);
+        if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot) && id==0) {
             c = Color.yellow;
             if (hmodel.carryingFood) c = Color.red;
             super.drawAgent(g, x, y, c, -1);
             g.setColor(Color.black);
             super.drawString(g, x, y, defaultFont, "Car");
         }
-		
-		/*Location lMotor = hmodel.getAgPos(1);
-		if (!lMotor.equals(hmodel.lRestaurant) && !lMotor.equals(hmodel.lMydepotmotor)) {
-            c = Color.yellow;
-            if (hmodel.carryingJuice) c = Color.red;
+		if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot) && id==1) {
+            c = Color.green;
+            if (hmodel.carryingFood) c = Color.red;
             super.drawAgent(g, x, y, c, -1);
             g.setColor(Color.black);
             super.drawString(g, x, y, defaultFont, "Motor");
-        }*/
+        }
     }
 }

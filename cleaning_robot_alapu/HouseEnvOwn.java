@@ -87,13 +87,13 @@ public class HouseEnvOwn extends Environment {
             addPercept("car", hob);
             addPercept("restaurant", hob);
         }
-		/*if (model.mydepotmotorOpen) {
+		if (model.mydepotmotorOpen) {
             addPercept("motor", Literal.parseLiteral("stock(juice,"+model.availableJuices+")"));
         }
         if (model.juiceConsumptionCount > 0) {
             addPercept("motor", hobm);
             addPercept("restaurant", hobm);
-        }*/
+        }
     }
 
 
@@ -104,15 +104,28 @@ public class HouseEnvOwn extends Environment {
         if (action.equals(of)) { // of = open(mydepot)
             result = model.openMydepot();
 
-        } else if (action.equals(clf)) { // clf = close(mydepot)
+        }
+		else if (action.equals(ofm)) { // of = open(mydepot) MOTORHOZ
+            result = model.openMydepotmotor();
+
+        }
+		else if (action.equals(clf)) { // clf = close(mydepot)
             result = model.closeMydepot();
 
-        } else if (action.getFunctor().equals("move_towards")) {
+        }
+		else if (action.equals(clfm)) { // clf = close(mydepot)
+            result = model.closeMydepotmotor();
+
+        }else if (action.getFunctor().equals("move_towards")) {
             String l = action.getTerm(0).toString();
             Location dest = null;
             if (l.equals("mydepot")) {
                 dest = model.lMydepot;
-            } else if (l.equals("restaurant")) {
+            }
+			/* else if (l.equals("mydepotmotor")) {
+                dest = model.lMydepotmotor;
+            } */
+			else if (l.equals("restaurant")) {
                 dest = model.lRestaurant;
             }
 
@@ -125,11 +138,23 @@ public class HouseEnvOwn extends Environment {
         } else if (action.equals(gb)) {
             result = model.getFood();
 
-        } else if (action.equals(hb)) {
+        }
+		else if (action.equals(gbm)) {
+            result = model.getJuice();
+
+        }else if (action.equals(hb)) {
             result = model.handInFood();
+
+        }
+		else if (action.equals(hbm)) {
+            result = model.handInJuice();
 
         } else if (action.equals(sb)) {
             result = model.sipFood();
+
+        } 
+		else if (action.equals(sbm)) {
+            result = model.sipJuice();
 
         } else if (action.getFunctor().equals("deliver")) {
             // wait 4 seconds to finish "deliver"

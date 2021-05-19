@@ -25,10 +25,10 @@ public class HouseModelOwn extends GridWorldModel {
     int availableFoods  = 6; // how many foods are available
 	int availableJuices  = 8;
 
-    Location lMydepot = new Location(0,0); //autonak
+    Location lMydepot = new Location(0,0);
 	Location lMydepotmotor = new Location(0,GSize-1); //motornak
-	Location lMydepotbic = new Location(GSize-1, 0); //biciklinek
-    Location lRestaurant  = new Location(GSize-1,GSize-1); //étterem
+	Location lMydepotbic = new Location(GSize-1, 3); //biciklinek
+    Location lRestaurant  = new Location(GSize-1,GSize-1);
 
     public HouseModelOwn() {
         // create a 7x7 grid with one mobile agent
@@ -36,7 +36,7 @@ public class HouseModelOwn extends GridWorldModel {
 
         // initial location of car (column 3, line 3)
         // ag code 0 means the car
-        setAgPos(0, GSize/2, GSize/2);
+        setAgPos(0, 0, 1);
 		//setAgPos(1, GSize/2+1, GSize/2); //ez lenne az 1 miatt a motor?
 
         // initial location of mydepot and restaurant
@@ -96,15 +96,14 @@ public class HouseModelOwn extends GridWorldModel {
         }
         return true;
     }
-	//Késõbbiekben lehet inkább ez a mozgás kéne:
-	/*
-	boolean moveTowardsmotor(Location dest, int index) {
-        Location r2 = getAgPos(index);
+	//ugyanúgy, csak a motor mozgásának
+	boolean moveTowardsmotor(Location dest) {
+        Location r2 = getAgPos(0);
         if (r2.x < dest.x)        r2.x++;
         else if (r2.x > dest.x)   r2.x--;
         if (r2.y < dest.y)        r2.y++;
         else if (r2.y > dest.y)   r2.y--;
-        setAgPos(index, r2); // move the motor?? in the grid
+        setAgPos(1, r2); // move the motor?? in the grid
 
         // repaint the mydepotmotor and restaurant locations
         if (view != null) {
@@ -113,7 +112,6 @@ public class HouseModelOwn extends GridWorldModel {
         }
         return true;
     }
-	*/
 
     boolean getFood() {
         if (mydepotOpen && availableFoods > 0 && !carryingFood) {
