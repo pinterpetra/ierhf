@@ -19,12 +19,22 @@ public class HouseEnvOwn extends Environment {
     public static final Literal hbm  = Literal.parseLiteral("hand_in(juice)");
     public static final Literal sbm  = Literal.parseLiteral("sip(juice)");
     public static final Literal hobm = Literal.parseLiteral("has(restaurant,juice)");
+	
+	public static final Literal ofb  = Literal.parseLiteral("open(mydepotbic)");
+    public static final Literal clfb = Literal.parseLiteral("close(mydepotbic)");
+    public static final Literal gbb = Literal.parseLiteral("get(cookie)");
+    public static final Literal hbb  = Literal.parseLiteral("hand_in(cookie)");
+    public static final Literal sbb  = Literal.parseLiteral("sip(cookie)");
+    public static final Literal hobb = Literal.parseLiteral("has(restaurant,cookie)");
 
     public static final Literal af = Literal.parseLiteral("at(car,mydepot)");
     public static final Literal ao = Literal.parseLiteral("at(car,restaurant)");
 	
 	public static final Literal afm = Literal.parseLiteral("at(motor,mydepotmotor)");
     public static final Literal aom = Literal.parseLiteral("at(motor,restaurant)");
+	
+	public static final Literal afb = Literal.parseLiteral("at(bicycle,mydepotbic)");
+    public static final Literal aob = Literal.parseLiteral("at(bicycle,restaurant)");
 
     static Logger logger = Logger.getLogger(HouseEnvOwn.class.getName());
 
@@ -47,11 +57,13 @@ public class HouseEnvOwn extends Environment {
         // clear the percepts of the agents
         clearPercepts("car");
 		clearPercepts("motor");
+		clearPercepts("bicycle");
         clearPercepts("restaurant");
 
         // get the car location
         Location lCar = model.getAgPos(0);
 		Location lMotor = model.getAgPos(1);
+		Location lBicycle = model.getAgPos(2);
 
         // add agent location to its percepts
         if (lCar.equals(model.lMydepot)) {

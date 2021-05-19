@@ -1,7 +1,7 @@
 /* Initial beliefs and rules */
 
-// initially, I believe that there is some cookie in the mydepot
-available(cookie,mydepot).
+// initially, I believe that there is some cookie in the mydepotbic
+available(cookie,mydepotbic).
 
 // my restaurant should not consume more than 5 cookies a day :-)
 limit(cookie,5).
@@ -16,11 +16,11 @@ too_much(B) :-
 /* Plans */
 
 +!has(restaurant,cookie)
-   :  available(cookie,mydepot) & not too_much(cookie)
-   <- !at(bicycle,mydepot);
-      open(mydepot);
+   :  available(cookie,mydepotbic) & not too_much(cookie)
+   <- !at(bicycle,mydepotbic);
+      open(mydepotbic);
       get(cookie);
-      close(mydepot);
+      close(mydepotbic);
       !at(bicycle,restaurant);
       hand_in(cookie);
       ?has(restaurant,cookie);
@@ -29,9 +29,9 @@ too_much(B) :-
       +consumed(YY,MM,DD,HH,NN,SS,cookie).
 
 +!has(restaurant,cookie)
-   :  not available(cookie,mydepot)
+   :  not available(cookie,mydepotbic)
    <- .send(supermarket, achieve, order(cookie,5));
-      !at(bicycle,mydepot). // go to mydepot and wait there.
+      !at(bicycle,mydepotbic). // go to mydepotbic and wait there.
 
 +!has(restaurant,cookie)
    :  too_much(cookie) & limit(cookie,L)
@@ -53,17 +53,17 @@ too_much(B) :-
 // when the supermarket makes a delivery, try the 'has' goal again
 +delivered(cookie,_Qtd,_OrderId)[source(supermarket)]
   :  true
-  <- +available(cookie,mydepot);
+  <- +available(cookie,mydepotbic);
      !has(restaurant,cookie).
 
-// when the mydepot is opened, the cookie stock is perceived
+// when the mydepotbic is opened, the cookie stock is perceived
 // and thus the available belief is updated
 +stock(cookie,0)
-   :  available(cookie,mydepot)
-   <- -available(cookie,mydepot).
+   :  available(cookie,mydepotbic)
+   <- -available(cookie,mydepotbic).
 +stock(cookie,N)
-   :  N > 0 & not available(cookie,mydepot)
-   <- -+available(cookie,mydepot).
+   :  N > 0 & not available(cookie,mydepotbic)
+   <- -+available(cookie,mydepotbic).
 
 +?time(T) : true
   <-  time.check(T).

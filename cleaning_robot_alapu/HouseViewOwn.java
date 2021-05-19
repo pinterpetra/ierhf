@@ -42,6 +42,13 @@ public class HouseViewOwn extends GridWorldView {
             g.setColor(Color.green);
             drawString(g, x, y, defaultFont, "Mydepotmotor");
             break;
+		case HouseModelOwn.MYDEPOTBIC:
+			if (lCar.equals(hmodel.lMydepotbic)) {
+					super.drawAgent(g, x, y, Color.green, -1);
+				}
+            g.setColor(Color.green);
+            drawString(g, x, y, defaultFont, "Mydepotbic");
+            break;
 			
         case HouseModelOwn.RESTAURANT:
             if (lCar.equals(hmodel.lRestaurant)) {

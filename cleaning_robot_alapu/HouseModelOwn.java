@@ -7,6 +7,7 @@ public class HouseModelOwn extends GridWorldModel {
     // constants for the grid objects
     public static final int MYDEPOT = 16;
 	public static final int MYDEPOTMOTOR = 24;
+	public static final int MYDEPOTBIC = 25;
     public static final int RESTAURANT  = 32;
 
     // the grid size
@@ -25,7 +26,8 @@ public class HouseModelOwn extends GridWorldModel {
 	//int availableJuices  = 6;
 
     Location lMydepot = new Location(0,0);
-	Location lMydepotmotor = new Location(0,GSize-1);
+	Location lMydepotmotor = new Location(0,GSize-1); //motornak
+	Location lMydepotbic = new Location(GSize-1, 0); //biciklinek
     Location lRestaurant  = new Location(GSize-1,GSize-1);
 
     public HouseModelOwn() {
@@ -40,6 +42,7 @@ public class HouseModelOwn extends GridWorldModel {
         // initial location of mydepot and restaurant
         add(MYDEPOT, lMydepot);
 		add(MYDEPOTMOTOR, lMydepotmotor);
+		add(MYDEPOTBIC, lMydepotbic);
         add(RESTAURANT, lRestaurant);
     }
 
