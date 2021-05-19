@@ -11,7 +11,7 @@ public class HouseViewOwn extends GridWorldView {
     HouseModelOwn hmodel;
 
     public HouseViewOwn(HouseModelOwn model) {
-        super(model, "Restaurant Delivery System", 800);
+        super(model, "Restaurant Delivery System", 700);
         hmodel = model;
         defaultFont = new Font("Arial", Font.BOLD, 12); // change default font
         setVisible(true);
@@ -47,7 +47,7 @@ public class HouseViewOwn extends GridWorldView {
 			if (lCar.equals(hmodel.lMydepotbic)) {
 					super.drawAgent(g, x, y, Color.green, -3);
 				}
-            g.setColor(Color.red);
+            g.setColor(Color.green);
             drawString(g, x, y, defaultFont, "BicycleDepot");
             break;
 			
@@ -76,7 +76,6 @@ public class HouseViewOwn extends GridWorldView {
             g.setColor(Color.black);
             super.drawString(g, x, y, defaultFont, "Car");
         }
-		
 		/*Location lMotor = hmodel.getAgPos(1);
 		if (!lMotor.equals(hmodel.lRestaurant) && !lMotor.equals(hmodel.lMydepotmotor)) {
             c = Color.yellow;

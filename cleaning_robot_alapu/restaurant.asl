@@ -2,12 +2,37 @@
 
 !get(food).   // initial goal: get a food
 !get(juice).
+!get(cookie).
 !check_bored. // initial goal: verify whether I am getting bored
 
+
 +!get(food) : true
-   <- .send(car, achieve, has(restaurant,food)).
+	//<- .send(car, achieve, has(restaurant,food)).
+	
+<-.random(Y);
+	if(Y%3==0)
+	{
+		<- .send(car, achieve, has(restaurant,food)).
+		<- .send(car, "Szia").
+	}
+	elif(Y%3 == 1)
+	{
+		<- .send(car, achieve, has(restaurant,food)).
+		<- .send(car, "Szia bazd").
+		//<- .send(motor, achieve, has(restaurant,food)).
+	}
+	elif(Y%3 == 2)
+	{
+		<- .send(car, achieve, has(restaurant,food)).
+		<- .send(car, "Szia bazdmeg").
+		//<- .send(bicycle, achieve, has(restaurant,food)).
+	}
+	
+	
 +!get(juice) : true
    <- .send(motor, achieve, has(restaurant,juice)).
++!get(cookie) : true
+   <- .send(bicycle, achieve, has(restaurant,cookie)).
 
 +has(restaurant,food) : true
    <- !drink(food).
