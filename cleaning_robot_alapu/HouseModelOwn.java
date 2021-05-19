@@ -9,7 +9,7 @@ public class HouseModelOwn extends GridWorldModel {
     public static final int RESTAURANT  = 32;
 
     // the grid size
-    public static final int GSize = 7;
+    public static final int GSize =10;
 
     boolean mydepotOpen   = false; // whether the mydepot is open
     boolean carryingFood = false; // whether the car is carrying food
@@ -18,6 +18,9 @@ public class HouseModelOwn extends GridWorldModel {
 
     Location lMydepot = new Location(0,0);
     Location lRestaurant  = new Location(GSize-1,GSize-1);
+	//Location 2Mydepot = new Location(GSize/2,GSize/2);
+	Location motorMydepot = new Location(0,GSize/2);
+	Location bicycleMydepot = new Location(GSize/2,0);
 
     public HouseModelOwn() {
         // create a 7x7 grid with one mobile agent
@@ -30,6 +33,7 @@ public class HouseModelOwn extends GridWorldModel {
         // initial location of mydepot and restaurant
         add(MYDEPOT, lMydepot);
         add(RESTAURANT, lRestaurant);
+		//add(MYDEPOT, 2Mydepot);
     }
 
     boolean openMydepot() {
