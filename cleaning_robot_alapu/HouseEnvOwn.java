@@ -13,18 +13,18 @@ public class HouseEnvOwn extends Environment {
     public static final Literal sb  = Literal.parseLiteral("sip(food)");
     public static final Literal hob = Literal.parseLiteral("has(restaurant,food)");
 	
-	/*public static final Literal ofm  = Literal.parseLiteral("open(mydepotmotor)");
+	public static final Literal ofm  = Literal.parseLiteral("open(mydepotmotor)");
     public static final Literal clfm = Literal.parseLiteral("close(mydepotmotor)");
     public static final Literal gbm  = Literal.parseLiteral("get(juice)");
     public static final Literal hbm  = Literal.parseLiteral("hand_in(juice)");
     public static final Literal sbm  = Literal.parseLiteral("sip(juice)");
-    public static final Literal hobm = Literal.parseLiteral("has(restaurant,juice)");*/
+    public static final Literal hobm = Literal.parseLiteral("has(restaurant,juice)");
 
     public static final Literal af = Literal.parseLiteral("at(car,mydepot)");
     public static final Literal ao = Literal.parseLiteral("at(car,restaurant)");
 	
-	/*public static final Literal afm = Literal.parseLiteral("at(motor,mydepotmotor)");
-    public static final Literal aom = Literal.parseLiteral("at(motor,restaurant)");*/
+	public static final Literal afm = Literal.parseLiteral("at(motor,mydepotmotor)");
+    public static final Literal aom = Literal.parseLiteral("at(motor,restaurant)");
 
     static Logger logger = Logger.getLogger(HouseEnvOwn.class.getName());
 
@@ -51,7 +51,7 @@ public class HouseEnvOwn extends Environment {
 
         // get the car location
         Location lCar = model.getAgPos(0);
-		//Location lMotor = model.getAgPos(1);
+		Location lMotor = model.getAgPos(1);
 
         // add agent location to its percepts
         if (lCar.equals(model.lMydepot)) {
