@@ -6,35 +6,36 @@ import java.util.logging.Logger;
 public class HouseEnvOwn extends Environment {
 
     // common literals
-    public static final Literal of  = Literal.parseLiteral("open(mydepot)");
-    public static final Literal clf = Literal.parseLiteral("close(mydepot)");
-    public static final Literal gb  = Literal.parseLiteral("get(food)");
-    public static final Literal hb  = Literal.parseLiteral("hand_in(food)");
-    public static final Literal sb  = Literal.parseLiteral("sip(food)");
-    public static final Literal hob = Literal.parseLiteral("has(restaurant,food)");
+    public static final Literal literalCARopensItsDepot  = Literal.parseLiteral("open(mydepot)");
+    public static final Literal literalCARclosesItsDepot = Literal.parseLiteral("close(mydepot)");
+    public static final Literal literalGetFOOD  = Literal.parseLiteral("get(food)");
+    public static final Literal literalHandInFOOD  = Literal.parseLiteral("hand_in(food)");
+    public static final Literal literalSipFOOD  = Literal.parseLiteral("sip(food)");
+    public static final Literal literalRestaurantHasFOOD = Literal.parseLiteral("has(restaurant,food)");
 	
-	public static final Literal ofm  = Literal.parseLiteral("open(mydepotmotor)");
-    public static final Literal clfm = Literal.parseLiteral("close(mydepotmotor)");
-    public static final Literal gbm  = Literal.parseLiteral("get(juice)");
-    public static final Literal hbm  = Literal.parseLiteral("hand_in(juice)");
-    public static final Literal sbm  = Literal.parseLiteral("sip(juice)");
-    public static final Literal hobm = Literal.parseLiteral("has(restaurant,juice)");
+	public static final Literal literalMOTORopensItsDepot  = Literal.parseLiteral("open(mydepotmotor)");
+    public static final Literal literalMOTORclosesItsDepot = Literal.parseLiteral("close(mydepotmotor)");
+    public static final Literal literalGetJUICE  = Literal.parseLiteral("get(juice)");
+    public static final Literal literalHandInJUICE  = Literal.parseLiteral("hand_in(juice)");
+    public static final Literal literalSipJUICE  = Literal.parseLiteral("sip(juice)");
+    public static final Literal literalRestaurantHasJUICE = Literal.parseLiteral("has(restaurant,juice)");
 	
-	public static final Literal ofb  = Literal.parseLiteral("open(mydepotbic)");
-    public static final Literal clfb = Literal.parseLiteral("close(mydepotbic)");
-    public static final Literal gbb = Literal.parseLiteral("get(cookie)");
-    public static final Literal hbb  = Literal.parseLiteral("hand_in(cookie)");
-    public static final Literal sbb  = Literal.parseLiteral("sip(cookie)");
-    public static final Literal hobb = Literal.parseLiteral("has(restaurant,cookie)");
+	public static final Literal literalBICYCLEopensItsDepot  = Literal.parseLiteral("open(mydepotbic)");
+    public static final Literal literalBICYCLEclosesItsDepot = Literal.parseLiteral("close(mydepotbic)");
+    public static final Literal literalGetCOOKIE = Literal.parseLiteral("get(cookie)");
+    public static final Literal literalHandInCOOKIE  = Literal.parseLiteral("hand_in(cookie)");
+    public static final Literal literalSipCOOKIE  = Literal.parseLiteral("sip(cookie)");
+    public static final Literal literalRestaurantHasCOOKIE = Literal.parseLiteral("has(restaurant,cookie)");
 
-    public static final Literal af = Literal.parseLiteral("at(car,mydepot)");
-    public static final Literal ao = Literal.parseLiteral("at(car,restaurant)");
 	
-	public static final Literal afm = Literal.parseLiteral("at(motor,mydepotmotor)");
-    public static final Literal aom = Literal.parseLiteral("at(motor,restaurant)");
+    public static final Literal literalCARisAtItsDepot = Literal.parseLiteral("at(car,mydepot)");
+    public static final Literal literalCARisAtRestaurant = Literal.parseLiteral("at(car,restaurant)");
 	
-	public static final Literal afb = Literal.parseLiteral("at(bicycle,mydepotbic)");
-    public static final Literal aob = Literal.parseLiteral("at(bicycle,restaurant)");
+	public static final Literal literalMOTORisAtItsDepot = Literal.parseLiteral("at(motor,mydepotmotor)");
+    public static final Literal literalMOTORisAtRestaurant = Literal.parseLiteral("at(motor,restaurant)");
+	
+	/*public static final Literal literalBICYCLEisAtItsDepot = Literal.parseLiteral("at(bicycle,mydepotbic)");
+    public static final Literal literalBICYCEisAtRestaurant = Literal.parseLiteral("at(bicycle,restaurant)");*/
 
     static Logger logger = Logger.getLogger(HouseEnvOwn.class.getName());
 
@@ -67,16 +68,16 @@ public class HouseEnvOwn extends Environment {
 
         // add agent location to its percepts
         if (lCar.equals(model.lMydepot)) {
-            addPercept("car", af);
+            addPercept("car", literalCARisAtItsDepot);
         }
         if (lCar.equals(model.lRestaurant)) {
-            addPercept("car", ao);
+            addPercept("car", literalCARisAtRestaurant);
         }
 		/*if (lMotor.equals(model.lMydepotmotor)) {
-            addPercept("motor", afm);
+            addPercept("motor", literalMOTORisAtItsDepot);
         }
         if (lMotor.equals(model.lRestaurant)) {
-            addPercept("motor", aom);
+            addPercept("motor", literalMOTORisAtRestaurant);
         }*/
 
         // add food "status" the percepts
@@ -84,15 +85,15 @@ public class HouseEnvOwn extends Environment {
             addPercept("car", Literal.parseLiteral("stock(food,"+model.availableFoods+")"));
         }
         if (model.foodConsumptionCount > 0) {
-            addPercept("car", hob);
-            addPercept("restaurant", hob);
+            addPercept("car", literalRestaurantHasFOOD);
+            addPercept("restaurant", literalRestaurantHasFOOD);
         }
 		if (model.mydepotmotorOpen) {
             addPercept("motor", Literal.parseLiteral("stock(juice,"+model.availableJuices+")"));
         }
         if (model.juiceConsumptionCount > 0) {
-            addPercept("motor", hobm);
-            addPercept("restaurant", hobm);
+            addPercept("motor", literalRestaurantHasJUICE);
+            addPercept("restaurant", literalRestaurantHasJUICE);
         }
     }
 
@@ -101,19 +102,19 @@ public class HouseEnvOwn extends Environment {
     public boolean executeAction(String ag, Structure action) {
         System.out.println("["+ag+"] doing: "+action);
         boolean result = false;
-        if (action.equals(of)) { // of = open(mydepot)
+        if (action.equals(literalCARopensItsDepot)) { // literalCARopensItsDepot = open(mydepot)
             result = model.openMydepot();
 
         }
-		else if (action.equals(ofm)) { // of = open(mydepot) MOTORHOZ
+		else if (action.equals(literalMOTORopensItsDepot)) { // of = open(mydepot) MOTORHOZ
             result = model.openMydepotmotor();
 
         }
-		else if (action.equals(clf)) { // clf = close(mydepot)
+		else if (action.equals(literalCARclosesItsDepot)) { // literalCARclosesItsDepot = close(mydepot)
             result = model.closeMydepot();
 
         }
-		else if (action.equals(clfm)) { // clf = close(mydepot)
+		else if (action.equals(literalMOTORclosesItsDepot)) { // clf = close(mydepot)
             result = model.closeMydepotmotor();
 
         }else if (action.getFunctor().equals("move_towards")) {
@@ -135,25 +136,25 @@ public class HouseEnvOwn extends Environment {
                 e.printStackTrace();
             }
 
-        } else if (action.equals(gb)) {
+        } else if (action.equals(literalGetFOOD)) {
             result = model.getFood();
 
         }
-		else if (action.equals(gbm)) {
+		else if (action.equals(literalGetJUICE)) {
             result = model.getJuice();
 
-        }else if (action.equals(hb)) {
+        }else if (action.equals(literalHandInFOOD)) {
             result = model.handInFood();
 
         }
-		else if (action.equals(hbm)) {
+		else if (action.equals(literalHandInJUICE)) {
             result = model.handInJuice();
 
-        } else if (action.equals(sb)) {
+        } else if (action.equals(literalSipFOOD)) {
             result = model.sipFood();
 
         } 
-		else if (action.equals(sbm)) {
+		else if (action.equals(literalSipJUICE)) {
             result = model.sipJuice();
 
         } else if (action.getFunctor().equals("deliver")) {
