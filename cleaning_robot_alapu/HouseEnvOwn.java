@@ -20,12 +20,12 @@ public class HouseEnvOwn extends Environment {
     public static final Literal literalSipJUICE  = Literal.parseLiteral("sip(juice)");
     public static final Literal literalRestaurantHasJUICE = Literal.parseLiteral("has(restaurant,juice)");
 	
-	/*public static final Literal literalBICYCLEopensItsDepot  = Literal.parseLiteral("open(mydepotbic)");
+	public static final Literal literalBICYCLEopensItsDepot  = Literal.parseLiteral("open(mydepotbic)");
     public static final Literal literalBICYCLEclosesItsDepot = Literal.parseLiteral("close(mydepotbic)");
     public static final Literal literalGetCOOKIE = Literal.parseLiteral("get(cookie)");
     public static final Literal literalHandInCOOKIE  = Literal.parseLiteral("hand_in(cookie)");
     public static final Literal literalSipCOOKIE  = Literal.parseLiteral("sip(cookie)");
-    public static final Literal literalRestaurantHasCOOKIE = Literal.parseLiteral("has(restaurant,cookie)");*/
+    public static final Literal literalRestaurantHasCOOKIE = Literal.parseLiteral("has(restaurant,cookie)");
 
 	
     public static final Literal literalCARisAtItsDepot = Literal.parseLiteral("at(car,mydepot)");
@@ -34,8 +34,8 @@ public class HouseEnvOwn extends Environment {
 	public static final Literal literalMOTORisAtItsDepot = Literal.parseLiteral("at(motor,mydepotmotor)");
     public static final Literal literalMOTORisAtRestaurant = Literal.parseLiteral("at(motor,restaurant)");
 	
-	/*public static final Literal literalBICYCLEisAtItsDepot = Literal.parseLiteral("at(bicycle,mydepotbic)");
-    public static final Literal literalBICYCEisAtRestaurant = Literal.parseLiteral("at(bicycle,restaurant)");*/
+	public static final Literal literalBICYCLEisAtItsDepot = Literal.parseLiteral("at(bicycle,mydepotbic)");
+    public static final Literal literalBICYCLEisAtRestaurant = Literal.parseLiteral("at(bicycle,restaurant)");
 
     static Logger logger = Logger.getLogger(HouseEnvOwn.class.getName());
 
@@ -73,12 +73,18 @@ public class HouseEnvOwn extends Environment {
         if (lCar.equals(model.lRestaurant)) {
             addPercept("car", literalCARisAtRestaurant);
         }
-		/*if (lMotor.equals(model.lMydepotmotor)) {
+		if (lMotor.equals(model.lMydepotmotor)) {
             addPercept("motor", literalMOTORisAtItsDepot);
         }
         if (lMotor.equals(model.lRestaurant)) {
             addPercept("motor", literalMOTORisAtRestaurant);
-        }*/
+        }
+		if (lMotor.equals(model.lMydepotmotor)) {
+            addPercept("bicycle", literalBICYCLEisAtItsDepot);
+        }
+        if (lBicycle.equals(model.lRestaurant)) {
+            addPercept("bicycle", literalBICYCLEisAtRestaurant);
+        }
 
         // add food "status" the percepts
         if (model.mydepotOpen) {
@@ -95,6 +101,13 @@ public class HouseEnvOwn extends Environment {
             addPercept("motor", literalRestaurantHasJUICE);
             addPercept("restaurant", literalRestaurantHasJUICE);
         }
+		if (model.mydepotbicOpen) {
+            addPercept("bicycle", Literal.parseLiteral("stock(cookie,"+model.availableCookies+")"));
+        }
+        if (model.cookieConsumptionCount > 0) {
+            addPercept("bicycle", literalRestaurantHasCOOKIE);
+            addPercept("restaurant", literalRestaurantHasCOOKIE);
+        }
     }
 
 
@@ -105,21 +118,21 @@ public class HouseEnvOwn extends Environment {
         boolean result = false;
         if (action.equals(literalCARopensItsDepot)) { // literalCARopensItsDepot = open(mydepot)
             result = model.openMydepot();
-
+        }
+		else if (action.equals(literalCARclosesItsDepot)) { // literalCARclosesItsDepot = close(mydepot)
+            result = model.closeMydepot();
         }
 		else if (action.equals(literalMOTORopensItsDepot)) {
             result = model.openMydepotmotor();
-
-        }
-		
-		
-		else if (action.equals(literalCARclosesItsDepot)) { // literalCARclosesItsDepot = close(mydepot)
-            result = model.closeMydepot();
-
         }
 		else if (action.equals(literalMOTORclosesItsDepot)) {
             result = model.closeMydepotmotor();
-
+        }
+		else if (action.equals(literalBICYCLEopensItsDepot)) {
+            result = model.openMydepotbic();
+        }
+		else if (action.equals(literalBICYCLEclosesItsDepot)) {
+            result = model.closeMydepotbic();
         }
 		
 		else if (action.getFunctor().equals("move_towards")) { //ezzel mozog a car
@@ -154,6 +167,22 @@ public class HouseEnvOwn extends Environment {
                 e.printStackTrace();
             }
         }
+		else if (action.getFunctor().equals("move_towards_bic")) { //ezzel mozogna a bickili
+            String l = action.getTerm(0).toString(); //mi az a getTerm?
+            Location dest = null;
+            if (l.equals("mydepotbic")) {
+                dest = model.lMydepotbic;
+            }
+			else if (l.equals("restaurant")) {
+                dest = model.lRestaurant;
+            }
+
+            try {
+                result = model.moveTowardsbic(dest);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
 		
 		else if (action.equals(literalGetFOOD)) {
             result = model.getFood();
@@ -163,23 +192,29 @@ public class HouseEnvOwn extends Environment {
             result = model.getJuice();
 
         }
+		else if (action.equals(literalGetCOOKIE)) {
+            result = model.getCookie();
+
+        }
 		
 		else if (action.equals(literalHandInFOOD)) {
             result = model.handInFood();
-
         }
 		else if (action.equals(literalHandInJUICE)) {
             result = model.handInJuice();
-
+        }
+		else if (action.equals(literalHandInCOOKIE)) {
+            result = model.handInCookie();
         }
 		
 		else if (action.equals(literalSipFOOD)) {
             result = model.sipFood();
-
         } 
 		else if (action.equals(literalSipJUICE)) {
             result = model.sipJuice();
-
+        }
+		else if (action.equals(literalSipCOOKIE)) {
+            result = model.sipCookie();
         }
 		
 		else if (action.getFunctor().equals("deliver")) { //ez a deliver a supermarket belief systemjében van, depó utántöltéséért felel, lehet kell bel?le külön minden típusú kajára
@@ -187,6 +222,8 @@ public class HouseEnvOwn extends Environment {
             try {
                 Thread.sleep(4000);
                 result = model.addFood( (int)((NumberTerm)action.getTerm(1)).solve());
+				result = model.addJuice( (int)((NumberTerm)action.getTerm(1)).solve()); //addJuice-nak egy fura, de m?köd? ág
+				result = model.addCookie( (int)((NumberTerm)action.getTerm(1)).solve());
             } catch (Exception e) {
                 logger.info("Failed to execute action deliver!"+e);
             }

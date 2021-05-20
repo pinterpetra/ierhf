@@ -2,12 +2,15 @@
 
 !get(food).   // initial goal: get a food
 !get(juice).
+!get(cookie).
 //!check_bored. // initial goal: verify whether I am getting bored
 
 +!get(food) : true
    <- .send(car, achieve, has(restaurant,food)).
 +!get(juice) : true
    <- .send(motor, achieve, has(restaurant,juice)).
++!get(cookie) : true
+   <- .send(bicycle, achieve, has(restaurant,cookie)).
 
 +has(restaurant,food) : true
    <- !drink(food).
@@ -16,7 +19,11 @@
 +has(restaurant,juice) : true
    <- !drink(juice).
 -has(restaurant,juice) : true
-   <- !get(food).
+   <- !get(juice).
++has(restaurant,cookie) : true
+   <- !drink(cookie).
+-has(restaurant,cookie) : true
+   <- !get(cookie).
 
 // while I have food, sip
 +!drink(food) : has(restaurant,food)
@@ -28,6 +35,11 @@
    <- sip(juice);
      !drink(juice).
 +!drink(juice) : not has(restaurant,juice)
+   <- true.
++!drink(cookie) : has(restaurant,cookie)
+   <- sip(cookie);
+     !drink(cookie).
++!drink(cookie) : not has(restaurant,cookie)
    <- true.
 
 /*+!check_bored : true

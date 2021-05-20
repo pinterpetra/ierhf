@@ -24,7 +24,7 @@ too_much(B) :-
       !at(motor,restaurant);
       hand_in(juice);
       ?has(restaurant,juice);
-	  !at(motor,mydepotmotor);
+	  //!at(motor,mydepotmotor);
       // remember that another juice has been consumed
       .date(YY,MM,DD); .time(HH,NN,SS);
       +consumed(YY,MM,DD,HH,NN,SS,juice).

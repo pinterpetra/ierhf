@@ -47,7 +47,7 @@ too_much(B) :-
 
 +!at(bicycle,P) : at(bicycle,P) <- true.
 +!at(bicycle,P) : not at(bicycle,P)
-  <- move_towards(P);
+  <- move_towards_bic(P);
      !at(bicycle,P).
 
 // when the supermarket makes a delivery, try the 'has' goal again
