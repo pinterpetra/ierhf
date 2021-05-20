@@ -24,6 +24,7 @@ too_much(B) :-
       !at(car,restaurant);
       hand_in(food);
       ?has(restaurant,food);
+	  !at(car,mydepot);
       // remember that another food has been consumed
       .date(YY,MM,DD); .time(HH,NN,SS);
       +consumed(YY,MM,DD,HH,NN,SS,food).
@@ -32,7 +33,7 @@ too_much(B) :-
    :  not available(food,mydepot)
    <- .send(supermarket, achieve, order(food,5));
       !at(car,mydepot). // go to mydepot and wait there.
-
+	  
 +!has(restaurant,food)
    :  too_much(food) & limit(food,L)
    <- .concat("The Department of Health does not allow me to give you more than ", L,
@@ -65,6 +66,3 @@ too_much(B) :-
    :  N > 0 & not available(food,mydepot)
    <- -+available(food,mydepot).
 
-/*+?time(T) : true
-  <-  time.check(T).
-*/

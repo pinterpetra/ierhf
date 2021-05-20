@@ -20,12 +20,12 @@ public class HouseEnvOwn extends Environment {
     public static final Literal literalSipJUICE  = Literal.parseLiteral("sip(juice)");
     public static final Literal literalRestaurantHasJUICE = Literal.parseLiteral("has(restaurant,juice)");
 	
-	public static final Literal literalBICYCLEopensItsDepot  = Literal.parseLiteral("open(mydepotbic)");
+	/*public static final Literal literalBICYCLEopensItsDepot  = Literal.parseLiteral("open(mydepotbic)");
     public static final Literal literalBICYCLEclosesItsDepot = Literal.parseLiteral("close(mydepotbic)");
     public static final Literal literalGetCOOKIE = Literal.parseLiteral("get(cookie)");
     public static final Literal literalHandInCOOKIE  = Literal.parseLiteral("hand_in(cookie)");
     public static final Literal literalSipCOOKIE  = Literal.parseLiteral("sip(cookie)");
-    public static final Literal literalRestaurantHasCOOKIE = Literal.parseLiteral("has(restaurant,cookie)");
+    public static final Literal literalRestaurantHasCOOKIE = Literal.parseLiteral("has(restaurant,cookie)");*/
 
 	
     public static final Literal literalCARisAtItsDepot = Literal.parseLiteral("at(car,mydepot)");
@@ -106,26 +106,27 @@ public class HouseEnvOwn extends Environment {
             result = model.openMydepot();
 
         }
-		else if (action.equals(literalMOTORopensItsDepot)) { // of = open(mydepot) MOTORHOZ
+		else if (action.equals(literalMOTORopensItsDepot)) {
             result = model.openMydepotmotor();
 
         }
+		
+		
 		else if (action.equals(literalCARclosesItsDepot)) { // literalCARclosesItsDepot = close(mydepot)
             result = model.closeMydepot();
 
         }
-		else if (action.equals(literalMOTORclosesItsDepot)) { // clf = close(mydepot)
+		else if (action.equals(literalMOTORclosesItsDepot)) {
             result = model.closeMydepotmotor();
 
-        }else if (action.getFunctor().equals("move_towards")) {
+        }
+		
+		else if (action.getFunctor().equals("move_towards")) { //ezzel mozog a car
             String l = action.getTerm(0).toString();
             Location dest = null;
             if (l.equals("mydepot")) {
                 dest = model.lMydepot;
             }
-			/* else if (l.equals("mydepotmotor")) {
-                dest = model.lMydepotmotor;
-            } */
 			else if (l.equals("restaurant")) {
                 dest = model.lRestaurant;
             }
@@ -135,29 +136,52 @@ public class HouseEnvOwn extends Environment {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+		else if (action.getFunctor().equals("move_towards_motor")) { //ezzel mozogna a motor
+            String l = action.getTerm(1).toString(); //mi az a getTerm?
+            Location dest = null;
+            if (l.equals("mydepotmotor")) {
+                dest = model.lMydepotmotor;
+            }
+			else if (l.equals("restaurant")) {
+                dest = model.lRestaurant;
+            }
 
-        } else if (action.equals(literalGetFOOD)) {
+            try {
+                result = model.moveTowardsmotor(dest);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+		
+		else if (action.equals(literalGetFOOD)) {
             result = model.getFood();
 
         }
 		else if (action.equals(literalGetJUICE)) {
             result = model.getJuice();
 
-        }else if (action.equals(literalHandInFOOD)) {
+        }
+		
+		else if (action.equals(literalHandInFOOD)) {
             result = model.handInFood();
 
         }
 		else if (action.equals(literalHandInJUICE)) {
             result = model.handInJuice();
 
-        } else if (action.equals(literalSipFOOD)) {
+        }
+		
+		else if (action.equals(literalSipFOOD)) {
             result = model.sipFood();
 
         } 
 		else if (action.equals(literalSipJUICE)) {
             result = model.sipJuice();
 
-        } else if (action.getFunctor().equals("deliver")) {
+        }
+		
+		else if (action.getFunctor().equals("deliver")) { //ez a deliver a supermarket belief systemjében van, depó utántöltéséért felel, lehet kell bel?le külön minden típusú kajára
             // wait 4 seconds to finish "deliver"
             try {
                 Thread.sleep(4000);

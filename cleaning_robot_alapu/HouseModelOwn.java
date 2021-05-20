@@ -98,7 +98,7 @@ public class HouseModelOwn extends GridWorldModel {
     }
 	//ugyanúgy, csak a motor mozgásának
 	boolean moveTowardsmotor(Location dest) {
-        Location r2 = getAgPos(0);
+        Location r2 = getAgPos(1);
         if (r2.x < dest.x)        r2.x++;
         else if (r2.x > dest.x)   r2.x--;
         if (r2.y < dest.y)        r2.y++;

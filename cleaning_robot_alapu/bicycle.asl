@@ -64,7 +64,4 @@ too_much(B) :-
 +stock(cookie,N)
    :  N > 0 & not available(cookie,mydepotbic)
    <- -+available(cookie,mydepotbic).
-/*
-+?time(T) : true
-  <-  time.check(T).
-*/
+

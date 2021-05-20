@@ -12,11 +12,11 @@
 +has(restaurant,food) : true
    <- !drink(food).
 -has(restaurant,food) : true
-   <- !get(food).
+   <- !get(juice). //emiatt nem indul vissza a kocsi, emiatt várná a restaurant a motort másodjára
 +has(restaurant,juice) : true
    <- !drink(juice).
 -has(restaurant,juice) : true
-   <- !get(juice).
+   <- !get(food).
 
 // while I have food, sip
 +!drink(food) : has(restaurant,food)

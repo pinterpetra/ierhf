@@ -38,7 +38,7 @@ public class HouseViewOwn extends GridWorldView {
 					super.drawAgent(g, x, y, Color.green, -2);
 				}*/
             g.setColor(Color.black);
-            drawString(g, x, y, defaultFont, "MotorDepot");
+            drawString(g, x, y, defaultFont, "MotorDepot ("+hmodel.availableJuices+")");
             break;
 		case HouseModelOwn.MYDEPOTBIC:
 			/*if (lBicycle.equals(hmodel.lMydepotbic)) {
@@ -64,10 +64,11 @@ public class HouseViewOwn extends GridWorldView {
 
     @Override
     public void drawAgent(Graphics g, int x, int y, Color c, int id) {
-        Location lCar = hmodel.getAgPos(0);
-		Location lMotor = hmodel.getAgPos(1);
+        
+		
 		switch (id) {
 			case 0:
+				Location lCar = hmodel.getAgPos(0);
 				if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot)) {
 					c = Color.yellow;
 					if (hmodel.carryingFood) c = Color.red;
@@ -76,13 +77,14 @@ public class HouseViewOwn extends GridWorldView {
 					super.drawString(g, x, y, defaultFont, "Car");
 			}
 			case 1:
+				Location lMotor = hmodel.getAgPos(1);
 				c = Color.green;								
 				super.drawAgent(g, 1, 8, c, -1);
 				g.setColor(Color.black);
 				super.drawString(g, 1, 8, defaultFont, "Motor");
-				/*if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot)) {
+				/*if (!lMotor.equals(hmodel.lRestaurant) && !lMotor.equals(hmodel.lMydepotmotor)) {
 						c = Color.green;
-						if (hmodel.carryingFood) c = Color.red;
+						if (hmodel.carryingJuice) c = Color.red;
 						super.drawAgent(g, x, y, c, -1);
 						g.setColor(Color.black);
 						super.drawString(g, x, y, defaultFont, "Motor");

@@ -24,6 +24,7 @@ too_much(B) :-
       !at(motor,restaurant);
       hand_in(juice);
       ?has(restaurant,juice);
+	  !at(motor,mydepotmotor);
       // remember that another juice has been consumed
       .date(YY,MM,DD); .time(HH,NN,SS);
       +consumed(YY,MM,DD,HH,NN,SS,juice).
@@ -47,7 +48,7 @@ too_much(B) :-
 
 +!at(motor,P) : at(motor,P) <- true.
 +!at(motor,P) : not at(motor,P)
-  <- move_towards(P);
+  <- move_towards_motor(P);
      !at(motor,P).
 
 // when the supermarket makes a delivery, try the 'has' goal again
@@ -65,7 +66,3 @@ too_much(B) :-
    :  N > 0 & not available(juice,mydepotmotor)
    <- -+available(juice,mydepotmotor).
 
-   /*
-+?time(T) : true
-  <-  time.check(T).
-*/
