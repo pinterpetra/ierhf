@@ -34,16 +34,16 @@ public class HouseViewOwn extends GridWorldView {
             drawString(g, x, y, defaultFont, "CarDepot ("+hmodel.availableFoods+")");
             break;
 			case HouseModelOwn.MYDEPOTMOTOR:
-			if (lCar.equals(hmodel.lMydepotmotor)) {
+			/*if (lMotor.equals(hmodel.lMydepotmotor)) {
 					super.drawAgent(g, x, y, Color.green, -2);
-				}
+				}*/
             g.setColor(Color.black);
             drawString(g, x, y, defaultFont, "MotorDepot");
             break;
 		case HouseModelOwn.MYDEPOTBIC:
-			if (lCar.equals(hmodel.lMydepotbic)) {
+			/*if (lBicycle.equals(hmodel.lMydepotbic)) {
 					super.drawAgent(g, x, y, Color.green, -3);
-				}
+				}*/
             g.setColor(Color.black);
             drawString(g, x, y, defaultFont, "BicycleDepot");
             break;
@@ -66,19 +66,40 @@ public class HouseViewOwn extends GridWorldView {
     public void drawAgent(Graphics g, int x, int y, Color c, int id) {
         Location lCar = hmodel.getAgPos(0);
 		Location lMotor = hmodel.getAgPos(1);
-        if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot) && id==0) {
-            c = Color.yellow;
-            if (hmodel.carryingFood) c = Color.red;
-            super.drawAgent(g, x, y, c, -1);
-            g.setColor(Color.black);
-            super.drawString(g, x, y, defaultFont, "Car");
-        }
-		if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot) && id==1) {
+		switch (id) {
+			case 0:
+				if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot)) {
+					c = Color.yellow;
+					if (hmodel.carryingFood) c = Color.red;
+					super.drawAgent(g, x, y, c, -1);
+					g.setColor(Color.black);
+					super.drawString(g, x, y, defaultFont, "Car");
+			}
+			case 1:
+				c = Color.green;								
+				super.drawAgent(g, 1, 8, c, -1);
+				g.setColor(Color.black);
+				super.drawString(g, 1, 8, defaultFont, "Motor");
+				/*if (!lCar.equals(hmodel.lRestaurant) && !lCar.equals(hmodel.lMydepot)) {
+						c = Color.green;
+						if (hmodel.carryingFood) c = Color.red;
+						super.drawAgent(g, x, y, c, -1);
+						g.setColor(Color.black);
+						super.drawString(g, x, y, defaultFont, "Motor");
+				}*/
+			case 2:
+				c = Color.magenta;
+				super.drawAgent(g, 8, 4, c, -1);
+				g.setColor(Color.black);
+				super.drawString(g, 8, 4, defaultFont, "Bicycle");
+		}
+        
+		/*else if (!lMotor.equals(hmodel.lRestaurant) && !lMotor.equals(hmodel.lMydepotmotor) && id==1) {
             c = Color.green;
-            if (hmodel.carryingFood) c = Color.red;
-            super.drawAgent(g, x, y, c, -1);
+            if (hmodel.carryingJuice) c = Color.red;
+            super.drawAgent(g, x, y, c, -2);
             g.setColor(Color.black);
             super.drawString(g, x, y, defaultFont, "Motor");
-        }
+        }*/
     }
 }
