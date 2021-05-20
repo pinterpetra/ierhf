@@ -64,8 +64,6 @@ public class HouseViewOwn extends GridWorldView {
 
     @Override
     public void drawAgent(Graphics g, int x, int y, Color c, int id) {
-        
-		
 		switch (id) {
 			case 0:
 				Location lCar = hmodel.getAgPos(0);
@@ -79,9 +77,9 @@ public class HouseViewOwn extends GridWorldView {
 			case 1:
 				Location lMotor = hmodel.getAgPos(1);
 				c = Color.green;								
-				super.drawAgent(g, 1, 8, c, -1);
+				super.drawAgent(g, x+1, y+1, c, -1);
 				g.setColor(Color.black);
-				super.drawString(g, 1, 8, defaultFont, "Motor");
+				super.drawString(g, x+1, y+1, defaultFont, "Motor");
 				/*if (!lMotor.equals(hmodel.lRestaurant) && !lMotor.equals(hmodel.lMydepotmotor)) {
 						c = Color.green;
 						if (hmodel.carryingJuice) c = Color.red;

@@ -7,11 +7,12 @@
 MAS domestic_robot {
     infrastructure: Centralised
     environment: HouseEnvOwn(gui) // use "nogui" as parameter to not show the GUI
-    agents: 
-			car;
-			motor;
-			bicycle;
-            restaurant;
-            supermarket;
+	//executionControl: jason.control.ExecutionControlGUI
+    agents:
+	car;
+	motor;
+	bicycle;
+	restaurant;
+	supermarket;
 }
 

@@ -100,7 +100,8 @@ public class HouseEnvOwn extends Environment {
 
     @Override
     public boolean executeAction(String ag, Structure action) {
-        System.out.println("["+ag+"] doing: "+action);
+        //System.out.println("["+ag+"] doing: "+action);
+		
         boolean result = false;
         if (action.equals(literalCARopensItsDepot)) { // literalCARopensItsDepot = open(mydepot)
             result = model.openMydepot();
@@ -138,7 +139,7 @@ public class HouseEnvOwn extends Environment {
             }
         }
 		else if (action.getFunctor().equals("move_towards_motor")) { //ezzel mozogna a motor
-            String l = action.getTerm(1).toString(); //mi az a getTerm?
+            String l = action.getTerm(0).toString(); //mi az a getTerm?
             Location dest = null;
             if (l.equals("mydepotmotor")) {
                 dest = model.lMydepotmotor;

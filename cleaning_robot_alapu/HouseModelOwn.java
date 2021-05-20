@@ -37,7 +37,9 @@ public class HouseModelOwn extends GridWorldModel {
         // initial location of car (column 3, line 3)
         // ag code 0 means the car
         setAgPos(0, 0, 1);
-		//setAgPos(1, GSize/2+1, GSize/2); //ez lenne az 1 miatt a motor?
+		//setAgPos(1, 2, 2); //ez lenne az 1 miatt a motor?
+		
+		//System.out.println(getNbOfAgs());
 
         // initial location of mydepot and restaurant
         add(MYDEPOT, lMydepot);

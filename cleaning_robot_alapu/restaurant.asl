@@ -12,7 +12,7 @@
 +has(restaurant,food) : true
    <- !drink(food).
 -has(restaurant,food) : true
-   <- !get(juice). //emiatt nem indul vissza a kocsi, emiatt várná a restaurant a motort másodjára
+   <- !get(food). //emiatt nem indul vissza a kocsi, emiatt várná a restaurant a motort másodjára
 +has(restaurant,juice) : true
    <- !drink(juice).
 -has(restaurant,juice) : true
@@ -43,6 +43,6 @@
 	  !get(juice).*/
 
 +msg(M)[source(Ag)] : true
-   <- .print("Message from ",Ag,": ",M);
+   <- //.print("Message from ",Ag,": ",M);
       -msg(M).
 
