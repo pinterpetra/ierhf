@@ -1,0 +1,59 @@
+
+available(cookie,mydepotbic).
+
+limit(cookie,8).
+
+too_much(B) :-
+   .date(YY,MM,DD) &
+   .count(consumed(YY,MM,DD,_,_,_,B),QtdB) &
+   limit(B,Limit) &
+   QtdB > Limit.
+
+
++!has(restaurant,cookie)
+   :  available(cookie,mydepotbic) & not too_much(cookie)
+   <- !at(bicycle,mydepotbic);
+      open(mydepotbic);
+      get(cookie);
+      close(mydepotbic);
+      !at(bicycle,restaurant);
+      hand_in(cookie);
+      ?has(restaurant,cookie);
+	  !at(bicycle,mydepotbic);
+      .date(YY,MM,DD); .time(HH,NN,SS);
+      +consumed(YY,MM,DD,HH,NN,SS,cookie).
+
++!has(restaurant,cookie)
+   :  not available(cookie,mydepotbic)
+   <- .send(supermarket, achieve, order(cookie,5));
+      !at(bicycle,mydepotbic).
+
++!has(restaurant,cookie)
+   :  too_much(cookie) & limit(cookie,L)
+   <- .concat("I can't deliver more than ", L,
+              " cookies a day!",M);
+      .send(restaurant,tell,msg(M)).
+
+
+-!has(_,_)
+   :  true
+   <- .current_intention(I);
+      .print("Failed to achieve goal '!has(_,_)'. Current intention is: ",I).
+
++!at(bicycle,P) : at(bicycle,P) <- true.
++!at(bicycle,P) : not at(bicycle,P)
+  <- move_towards_bic(P);
+     !at(bicycle,P).
+
++delivered(cookie,_Qtd,_OrderId)[source(supermarket)]
+  :  true
+  <- +available(cookie,mydepotbic);
+     !has(restaurant,cookie).
+
++stock(cookie,0)
+   :  available(cookie,mydepotbic)
+   <- -available(cookie,mydepotbic).
++stock(cookie,N)
+   :  N > 0 & not available(cookie,mydepotbic)
+   <- -+available(cookie,mydepotbic).
+

@@ -1,0 +1,13 @@
+
+
+MAS restaurant_delivery_system {
+    infrastructure: Centralised
+    environment: Env(gui) // use "nogui" as parameter to not show the GUI
+    agents:
+	car;
+	motor;
+	bicycle;
+	restaurant;
+	supermarket;
+}
+
